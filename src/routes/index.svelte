@@ -9,10 +9,9 @@
 import Card from '../lib/card.svelte';
 
 import feedsjson from '../../static/feed.json'
-import { each } from 'svelte/internal';
 
 let feeds = feedsjson.bruhFeed
-console.log(feeds)
+//console.log(feeds)
 </script>
 
 <body class="bg-gray-200">
