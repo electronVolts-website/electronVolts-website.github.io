@@ -11,6 +11,7 @@ const config = {
 			assets: 'docs',
 			fallback: null
 		}),
+		appDir: 'internal',
 	}
 };
 

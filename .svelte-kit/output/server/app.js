@@ -1430,13 +1430,13 @@ function init(settings = default_settings) {
     amp: false,
     dev: false,
     entry: {
-      file: assets + "/_app/start-ed4127d3.js",
-      css: [assets + "/_app/assets/start-d5b4de3e.css"],
-      js: [assets + "/_app/start-ed4127d3.js", assets + "/_app/chunks/vendor-608080d7.js"]
+      file: assets + "/internal/start-ef609325.js",
+      css: [assets + "/internal/assets/start-d5b4de3e.css"],
+      js: [assets + "/internal/start-ef609325.js", assets + "/internal/chunks/vendor-608080d7.js"]
     },
     fetched: void 0,
     floc: false,
-    get_component_path: (id) => assets + "/_app/" + entry_lookup[id],
+    get_component_path: (id) => assets + "/internal/" + entry_lookup[id],
     get_stack: (error2) => String(error2),
     handle_error: (error2, request) => {
       hooks.handleError({ error: error2, request });
@@ -1496,9 +1496,9 @@ async function load_component(file) {
   const { entry, css: css2, js, styles } = metadata_lookup[file];
   return {
     module: await module_lookup[file](),
-    entry: assets + "/_app/" + entry,
-    css: css2.map((dep) => assets + "/_app/" + dep),
-    js: js.map((dep) => assets + "/_app/" + dep),
+    entry: assets + "/internal/" + entry,
+    css: css2.map((dep) => assets + "/internal/" + dep),
+    js: js.map((dep) => assets + "/internal/" + dep),
     styles
   };
 }
