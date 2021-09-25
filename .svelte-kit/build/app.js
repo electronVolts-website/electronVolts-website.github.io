@@ -70,7 +70,7 @@ const d = s => s
 const empty = () => ({});
 
 const manifest = {
-	assets: [{"file":"feed.json","size":684,"type":"application/json"}],
+	assets: [{"file":".nojekyll","size":0,"type":null},{"file":"feed.json","size":684,"type":"application/json"}],
 	layout: "src/routes/__layout.svelte",
 	error: ".svelte-kit/build/components/error.svelte",
 	routes: [
