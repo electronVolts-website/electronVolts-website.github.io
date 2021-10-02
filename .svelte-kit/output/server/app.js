@@ -312,14 +312,14 @@ function stringifyString(str) {
   result += '"';
   return result;
 }
-function noop() {
+function noop$1() {
 }
 function safe_not_equal(a, b) {
   return a != a ? b == b : a !== b || (a && typeof a === "object" || typeof a === "function");
 }
 Promise.resolve();
 const subscriber_queue = [];
-function writable(value, start = noop) {
+function writable(value, start = noop$1) {
   let stop;
   const subscribers = new Set();
   function set(new_value) {
@@ -343,11 +343,11 @@ function writable(value, start = noop) {
   function update(fn) {
     set(fn(value));
   }
-  function subscribe(run2, invalidate = noop) {
+  function subscribe2(run2, invalidate = noop$1) {
     const subscriber = [run2, invalidate];
     subscribers.add(subscriber);
     if (subscribers.size === 1) {
-      stop = start(set) || noop;
+      stop = start(set) || noop$1;
     }
     run2(value);
     return () => {
@@ -358,7 +358,7 @@ function writable(value, start = noop) {
       }
     };
   }
-  return { set, update, subscribe };
+  return { set, update, subscribe: subscribe2 };
 }
 function hash(value) {
   let hash2 = 5381;
@@ -380,7 +380,7 @@ async function render_response({
   page_config,
   status,
   error: error2,
-  page
+  page: page2
 }) {
   const css2 = new Set(options2.entry.css);
   const js = new Set(options2.entry.js);
@@ -413,7 +413,7 @@ async function render_response({
         navigating: writable(null),
         session
       },
-      page,
+      page: page2,
       components: branch.map(({ node }) => node.module.default)
     };
     for (let i = 0; i < branch.length; i += 1) {
@@ -455,7 +455,7 @@ async function render_response({
 				session: ${try_serialize($session, (error3) => {
       throw new Error(`Failed to serialize session data: ${error3.message}`);
     })},
-				host: ${page && page.host ? s$1(page.host) : "location.host"},
+				host: ${page2 && page2.host ? s$1(page2.host) : "location.host"},
 				route: ${!!page_config.router},
 				spa: ${!page_config.ssr},
 				trailing_slash: ${s$1(options2.trailing_slash)},
@@ -466,10 +466,10 @@ async function render_response({
 						${(branch || []).map(({ node }) => `import(${s$1(node.entry)})`).join(",\n						")}
 					],
 					page: {
-						host: ${page && page.host ? s$1(page.host) : "location.host"}, // TODO this is redundant
-						path: ${s$1(page && page.path)},
-						query: new URLSearchParams(${page ? s$1(page.query.toString()) : ""}),
-						params: ${page && s$1(page.params)}
+						host: ${page2 && page2.host ? s$1(page2.host) : "location.host"}, // TODO this is redundant
+						path: ${s$1(page2 && page2.path)},
+						query: new URLSearchParams(${page2 ? s$1(page2.query.toString()) : ""}),
+						params: ${page2 && s$1(page2.params)}
 					}
 				}` : "null"}
 			});
@@ -579,7 +579,7 @@ async function load_node({
   options: options2,
   state,
   route,
-  page,
+  page: page2,
   node,
   $session,
   context,
@@ -594,7 +594,7 @@ async function load_node({
   const fetched = [];
   let set_cookie_headers = [];
   let loaded;
-  const page_proxy = new Proxy(page, {
+  const page_proxy = new Proxy(page2, {
     get: (target, prop, receiver) => {
       if (prop === "query" && prerender_enabled) {
         throw new Error("Cannot access query on a page with prerendering enabled");
@@ -636,7 +636,7 @@ async function load_node({
         if (asset) {
           response = options2.read ? new Response(options2.read(asset.file), {
             headers: asset.type ? { "content-type": asset.type } : {}
-          }) : await fetch(`http://${page.host}/${asset.file}`, opts);
+          }) : await fetch(`http://${page2.host}/${asset.file}`, opts);
         } else if (resolved.startsWith("/") && !resolved.startsWith("//")) {
           const relative = resolved;
           const headers = {
@@ -816,7 +816,7 @@ function resolve(base2, path) {
 async function respond_with_error({ request, options: options2, state, $session, status, error: error2 }) {
   const default_layout = await options2.load_component(options2.manifest.layout);
   const default_error = await options2.load_component(options2.manifest.error);
-  const page = {
+  const page2 = {
     host: request.host,
     path: request.path,
     query: request.query,
@@ -827,7 +827,7 @@ async function respond_with_error({ request, options: options2, state, $session,
     options: options2,
     state,
     route: null,
-    page,
+    page: page2,
     node: default_layout,
     $session,
     context: {},
@@ -842,7 +842,7 @@ async function respond_with_error({ request, options: options2, state, $session,
       options: options2,
       state,
       route: null,
-      page,
+      page: page2,
       node: default_error,
       $session,
       context: loaded ? loaded.context : {},
@@ -865,7 +865,7 @@ async function respond_with_error({ request, options: options2, state, $session,
       status,
       error: error2,
       branch,
-      page
+      page: page2
     });
   } catch (err) {
     const error3 = coalesce_to_error(err);
@@ -1040,7 +1040,7 @@ async function render_page(request, route, match, options2, state) {
     };
   }
   const params = route.params(match);
-  const page = {
+  const page2 = {
     host: request.host,
     path: request.path,
     query: request.query,
@@ -1053,7 +1053,7 @@ async function render_page(request, route, match, options2, state) {
     state,
     $session,
     route,
-    page
+    page: page2
   });
   if (response) {
     return response;
@@ -1274,6 +1274,8 @@ async function respond(incoming, options2, state = {}) {
     };
   }
 }
+function noop() {
+}
 function run(fn) {
   return fn();
 }
@@ -1282,6 +1284,13 @@ function blank_object() {
 }
 function run_all(fns) {
   fns.forEach(run);
+}
+function subscribe(store, ...callbacks) {
+  if (store == null) {
+    return noop;
+  }
+  const unsub = store.subscribe(...callbacks);
+  return unsub.unsubscribe ? () => unsub.unsubscribe() : unsub;
 }
 let current_component;
 function set_current_component(component) {
@@ -1294,6 +1303,9 @@ function get_current_component() {
 }
 function setContext(key, context) {
   get_current_component().$$.context.set(key, context);
+}
+function getContext(key) {
+  return get_current_component().$$.context.get(key);
 }
 Promise.resolve();
 const escaped = {
@@ -1373,7 +1385,7 @@ const css$1 = {
 };
 const Root = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   let { stores } = $$props;
-  let { page } = $$props;
+  let { page: page2 } = $$props;
   let { components } = $$props;
   let { props_0 = null } = $$props;
   let { props_1 = null } = $$props;
@@ -1382,8 +1394,8 @@ const Root = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   afterUpdate(stores.page.notify);
   if ($$props.stores === void 0 && $$bindings.stores && stores !== void 0)
     $$bindings.stores(stores);
-  if ($$props.page === void 0 && $$bindings.page && page !== void 0)
-    $$bindings.page(page);
+  if ($$props.page === void 0 && $$bindings.page && page2 !== void 0)
+    $$bindings.page(page2);
   if ($$props.components === void 0 && $$bindings.components && components !== void 0)
     $$bindings.components(components);
   if ($$props.props_0 === void 0 && $$bindings.props_0 && props_0 !== void 0)
@@ -1394,7 +1406,7 @@ const Root = create_ssr_component(($$result, $$props, $$bindings, slots) => {
     $$bindings.props_2(props_2);
   $$result.css.add(css$1);
   {
-    stores.page.set(page);
+    stores.page.set(page2);
   }
   return `
 
@@ -1430,9 +1442,9 @@ function init(settings = default_settings) {
     amp: false,
     dev: false,
     entry: {
-      file: assets + "/internal/start-f1a12d3c.js",
+      file: assets + "/internal/start-54e9d008.js",
       css: [assets + "/internal/assets/start-d5b4de3e.css"],
-      js: [assets + "/internal/start-f1a12d3c.js", assets + "/internal/chunks/vendor-608080d7.js"]
+      js: [assets + "/internal/start-54e9d008.js", assets + "/internal/chunks/vendor-43644719.js"]
     },
     fetched: void 0,
     floc: false,
@@ -1461,7 +1473,7 @@ function init(settings = default_settings) {
 }
 const empty = () => ({});
 const manifest = {
-  assets: [{ "file": ".nojekyll", "size": 0, "type": null }, { "file": "feed.json", "size": 684, "type": "application/json" }],
+  assets: [{ "file": ".nojekyll", "size": 0, "type": null }, { "file": "feed.json", "size": 684, "type": "application/json" }, { "file": "pranav.png", "size": 75531, "type": "image/png" }],
   layout: "src/routes/__layout.svelte",
   error: ".svelte-kit/build/components/error.svelte",
   routes: [
@@ -1470,6 +1482,20 @@ const manifest = {
       pattern: /^\/$/,
       params: empty,
       a: ["src/routes/__layout.svelte", "src/routes/index.svelte"],
+      b: [".svelte-kit/build/components/error.svelte"]
+    },
+    {
+      type: "page",
+      pattern: /^\/about\/?$/,
+      params: empty,
+      a: ["src/routes/__layout.svelte", "src/routes/about.svelte"],
+      b: [".svelte-kit/build/components/error.svelte"]
+    },
+    {
+      type: "page",
+      pattern: /^\/blog\/?$/,
+      params: empty,
+      a: ["src/routes/__layout.svelte", "src/routes/blog.svelte"],
       b: [".svelte-kit/build/components/error.svelte"]
     }
   ]
@@ -1489,9 +1515,15 @@ const module_lookup = {
   }),
   "src/routes/index.svelte": () => Promise.resolve().then(function() {
     return index;
+  }),
+  "src/routes/about.svelte": () => Promise.resolve().then(function() {
+    return about;
+  }),
+  "src/routes/blog.svelte": () => Promise.resolve().then(function() {
+    return blog;
   })
 };
-const metadata_lookup = { "src/routes/__layout.svelte": { "entry": "pages/__layout.svelte-e9136489.js", "css": ["assets/pages/__layout.svelte-20b0f37e.css"], "js": ["pages/__layout.svelte-e9136489.js", "chunks/vendor-608080d7.js"], "styles": [] }, ".svelte-kit/build/components/error.svelte": { "entry": "error.svelte-4658f049.js", "css": [], "js": ["error.svelte-4658f049.js", "chunks/vendor-608080d7.js"], "styles": [] }, "src/routes/index.svelte": { "entry": "pages/index.svelte-04ba0c5f.js", "css": [], "js": ["pages/index.svelte-04ba0c5f.js", "chunks/vendor-608080d7.js"], "styles": [] } };
+const metadata_lookup = { "src/routes/__layout.svelte": { "entry": "pages/__layout.svelte-4cd8c8d9.js", "css": ["assets/pages/__layout.svelte-9759a6d4.css"], "js": ["pages/__layout.svelte-4cd8c8d9.js", "chunks/vendor-43644719.js"], "styles": [] }, ".svelte-kit/build/components/error.svelte": { "entry": "error.svelte-b485231d.js", "css": [], "js": ["error.svelte-b485231d.js", "chunks/vendor-43644719.js"], "styles": [] }, "src/routes/index.svelte": { "entry": "pages/index.svelte-4bf6247d.js", "css": [], "js": ["pages/index.svelte-4bf6247d.js", "chunks/vendor-43644719.js"], "styles": [] }, "src/routes/about.svelte": { "entry": "pages/about.svelte-fb8bf2d5.js", "css": [], "js": ["pages/about.svelte-fb8bf2d5.js", "chunks/vendor-43644719.js"], "styles": [] }, "src/routes/blog.svelte": { "entry": "pages/blog.svelte-91471c3f.js", "css": [], "js": ["pages/blog.svelte-91471c3f.js", "chunks/vendor-43644719.js"], "styles": [] } };
 async function load_component(file) {
   const { entry, css: css2, js, styles } = metadata_lookup[file];
   return {
@@ -1508,14 +1540,79 @@ function render(request, {
   const host = request.headers["host"];
   return respond({ ...request, host }, options, { prerender });
 }
-var __layout_svelte_svelte_type_style_lang = "/*! tailwindcss v2.2.15 | MIT License | https://tailwindcss.com *//*! modern-normalize v1.1.0 | MIT License | https://github.com/sindresorhus/modern-normalize */\n\n/*\nDocument\n========\n*/\n\n/**\nUse a better box model (opinionated).\n*/\n\n*,\n::before,\n::after {\n	box-sizing: border-box;\n}\n\n/**\nUse a more readable tab size (opinionated).\n*/\n\nhtml {\n	-moz-tab-size: 4;\n	-o-tab-size: 4;\n	   tab-size: 4;\n}\n\n/**\n1. Correct the line height in all browsers.\n2. Prevent adjustments of font size after orientation changes in iOS.\n*/\n\nhtml {\n	line-height: 1.15; /* 1 */\n	-webkit-text-size-adjust: 100%; /* 2 */\n}\n\n/*\nSections\n========\n*/\n\n/**\nRemove the margin in all browsers.\n*/\n\nbody {\n	margin: 0;\n}\n\n/**\nImprove consistency of default fonts in all browsers. (https://github.com/sindresorhus/modern-normalize/issues/3)\n*/\n\nbody {\n	font-family:\n		system-ui,\n		-apple-system, /* Firefox supports this but not yet `system-ui` */\n		'Segoe UI',\n		Roboto,\n		Helvetica,\n		Arial,\n		sans-serif,\n		'Apple Color Emoji',\n		'Segoe UI Emoji';\n}\n\n/*\nGrouping content\n================\n*/\n\n/**\n1. Add the correct height in Firefox.\n2. Correct the inheritance of border color in Firefox. (https://bugzilla.mozilla.org/show_bug.cgi?id=190655)\n*/\n\nhr {\n	height: 0; /* 1 */\n	color: inherit; /* 2 */\n}\n\n/*\nText-level semantics\n====================\n*/\n\n/**\nAdd the correct text decoration in Chrome, Edge, and Safari.\n*/\n\nabbr[title] {\n	-webkit-text-decoration: underline dotted;\n	        text-decoration: underline dotted;\n}\n\n/**\nAdd the correct font weight in Edge and Safari.\n*/\n\nb,\nstrong {\n	font-weight: bolder;\n}\n\n/**\n1. Improve consistency of default fonts in all browsers. (https://github.com/sindresorhus/modern-normalize/issues/3)\n2. Correct the odd 'em' font sizing in all browsers.\n*/\n\ncode,\nkbd,\nsamp,\npre {\n	font-family:\n		ui-monospace,\n		SFMono-Regular,\n		Consolas,\n		'Liberation Mono',\n		Menlo,\n		monospace; /* 1 */\n	font-size: 1em; /* 2 */\n}\n\n/**\nAdd the correct font size in all browsers.\n*/\n\nsmall {\n	font-size: 80%;\n}\n\n/**\nPrevent 'sub' and 'sup' elements from affecting the line height in all browsers.\n*/\n\nsub,\nsup {\n	font-size: 75%;\n	line-height: 0;\n	position: relative;\n	vertical-align: baseline;\n}\n\nsub {\n	bottom: -0.25em;\n}\n\nsup {\n	top: -0.5em;\n}\n\n/*\nTabular data\n============\n*/\n\n/**\n1. Remove text indentation from table contents in Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=999088, https://bugs.webkit.org/show_bug.cgi?id=201297)\n2. Correct table border color inheritance in all Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=935729, https://bugs.webkit.org/show_bug.cgi?id=195016)\n*/\n\ntable {\n	text-indent: 0; /* 1 */\n	border-color: inherit; /* 2 */\n}\n\n/*\nForms\n=====\n*/\n\n/**\n1. Change the font styles in all browsers.\n2. Remove the margin in Firefox and Safari.\n*/\n\nbutton,\ninput,\noptgroup,\nselect,\ntextarea {\n	font-family: inherit; /* 1 */\n	font-size: 100%; /* 1 */\n	line-height: 1.15; /* 1 */\n	margin: 0; /* 2 */\n}\n\n/**\nRemove the inheritance of text transform in Edge and Firefox.\n1. Remove the inheritance of text transform in Firefox.\n*/\n\nbutton,\nselect { /* 1 */\n	text-transform: none;\n}\n\n/**\nCorrect the inability to style clickable types in iOS and Safari.\n*/\n\nbutton,\n[type='button'],\n[type='reset'],\n[type='submit'] {\n	-webkit-appearance: button;\n}\n\n/**\nRemove the inner border and padding in Firefox.\n*/\n\n::-moz-focus-inner {\n	border-style: none;\n	padding: 0;\n}\n\n/**\nRestore the focus styles unset by the previous rule.\n*/\n\n:-moz-focusring {\n	outline: 1px dotted ButtonText;\n}\n\n/**\nRemove the additional ':invalid' styles in Firefox.\nSee: https://github.com/mozilla/gecko-dev/blob/2f9eacd9d3d995c937b4251a5557d95d494c9be1/layout/style/res/forms.css#L728-L737\n*/\n\n:-moz-ui-invalid {\n	box-shadow: none;\n}\n\n/**\nRemove the padding so developers are not caught out when they zero out 'fieldset' elements in all browsers.\n*/\n\nlegend {\n	padding: 0;\n}\n\n/**\nAdd the correct vertical alignment in Chrome and Firefox.\n*/\n\nprogress {\n	vertical-align: baseline;\n}\n\n/**\nCorrect the cursor style of increment and decrement buttons in Safari.\n*/\n\n::-webkit-inner-spin-button,\n::-webkit-outer-spin-button {\n	height: auto;\n}\n\n/**\n1. Correct the odd appearance in Chrome and Safari.\n2. Correct the outline style in Safari.\n*/\n\n[type='search'] {\n	-webkit-appearance: textfield; /* 1 */\n	outline-offset: -2px; /* 2 */\n}\n\n/**\nRemove the inner padding in Chrome and Safari on macOS.\n*/\n\n::-webkit-search-decoration {\n	-webkit-appearance: none;\n}\n\n/**\n1. Correct the inability to style clickable types in iOS and Safari.\n2. Change font properties to 'inherit' in Safari.\n*/\n\n::-webkit-file-upload-button {\n	-webkit-appearance: button; /* 1 */\n	font: inherit; /* 2 */\n}\n\n/*\nInteractive\n===========\n*/\n\n/*\nAdd the correct display in Chrome and Safari.\n*/\n\nsummary {\n	display: list-item;\n}/**\n * Manually forked from SUIT CSS Base: https://github.com/suitcss/base\n * A thin layer on top of normalize.css that provides a starting point more\n * suitable for web applications.\n */\n\n/**\n * Removes the default spacing and border for appropriate elements.\n */\n\nblockquote,\ndl,\ndd,\nh1,\nh2,\nh3,\nh4,\nh5,\nh6,\nhr,\nfigure,\np,\npre {\n  margin: 0;\n}\n\nbutton {\n  background-color: transparent;\n  background-image: none;\n}\n\nfieldset {\n  margin: 0;\n  padding: 0;\n}\n\nol,\nul {\n  list-style: none;\n  margin: 0;\n  padding: 0;\n}\n\n/**\n * Tailwind custom reset styles\n */\n\n/**\n * 1. Use the user's configured `sans` font-family (with Tailwind's default\n *    sans-serif font stack as a fallback) as a sane default.\n * 2. Use Tailwind's default \"normal\" line-height so the user isn't forced\n *    to override it to ensure consistency even when using the default theme.\n */\n\nhtml {\n  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"; /* 1 */\n  line-height: 1.5; /* 2 */\n}\n\n\n/**\n * Inherit font-family and line-height from `html` so users can set them as\n * a class directly on the `html` element.\n */\n\nbody {\n  font-family: inherit;\n  line-height: inherit;\n}\n\n/**\n * 1. Prevent padding and border from affecting element width.\n *\n *    We used to set this in the html element and inherit from\n *    the parent element for everything else. This caused issues\n *    in shadow-dom-enhanced elements like <details> where the content\n *    is wrapped by a div with box-sizing set to `content-box`.\n *\n *    https://github.com/mozdevs/cssremedy/issues/4\n *\n *\n * 2. Allow adding a border to an element by just adding a border-width.\n *\n *    By default, the way the browser specifies that an element should have no\n *    border is by setting it's border-style to `none` in the user-agent\n *    stylesheet.\n *\n *    In order to easily add borders to elements by just setting the `border-width`\n *    property, we change the default border-style for all elements to `solid`, and\n *    use border-width to hide them instead. This way our `border` utilities only\n *    need to set the `border-width` property instead of the entire `border`\n *    shorthand, making our border utilities much more straightforward to compose.\n *\n *    https://github.com/tailwindcss/tailwindcss/pull/116\n */\n\n*,\n::before,\n::after {\n  box-sizing: border-box; /* 1 */\n  border-width: 0; /* 2 */\n  border-style: solid; /* 2 */\n  border-color: currentColor; /* 2 */\n}\n\n/*\n * Ensure horizontal rules are visible by default\n */\n\nhr {\n  border-top-width: 1px;\n}\n\n/**\n * Undo the `border-style: none` reset that Normalize applies to images so that\n * our `border-{width}` utilities have the expected effect.\n *\n * The Normalize reset is unnecessary for us since we default the border-width\n * to 0 on all elements.\n *\n * https://github.com/tailwindcss/tailwindcss/issues/362\n */\n\nimg {\n  border-style: solid;\n}\n\ntextarea {\n  resize: vertical;\n}\n\ninput::-moz-placeholder, textarea::-moz-placeholder {\n  opacity: 1;\n  color: #9ca3af;\n}\n\ninput:-ms-input-placeholder, textarea:-ms-input-placeholder {\n  opacity: 1;\n  color: #9ca3af;\n}\n\ninput::placeholder,\ntextarea::placeholder {\n  opacity: 1;\n  color: #9ca3af;\n}\n\nbutton,\n[role=\"button\"] {\n  cursor: pointer;\n}\n\n/**\n * Override legacy focus reset from Normalize with modern Firefox focus styles.\n *\n * This is actually an improvement over the new defaults in Firefox in our testing,\n * as it triggers the better focus styles even for links, which still use a dotted\n * outline in Firefox by default.\n */\n \n:-moz-focusring {\n	outline: auto;\n}\n\ntable {\n  border-collapse: collapse;\n}\n\nh1,\nh2,\nh3,\nh4,\nh5,\nh6 {\n  font-size: inherit;\n  font-weight: inherit;\n}\n\n/**\n * Reset links to optimize for opt-in styling instead of\n * opt-out.\n */\n\na {\n  color: inherit;\n  text-decoration: inherit;\n}\n\n/**\n * Reset form element properties that are easy to forget to\n * style explicitly so you don't inadvertently introduce\n * styles that deviate from your design system. These styles\n * supplement a partial reset that is already applied by\n * normalize.css.\n */\n\nbutton,\ninput,\noptgroup,\nselect,\ntextarea {\n  padding: 0;\n  line-height: inherit;\n  color: inherit;\n}\n\n/**\n * Use the configured 'mono' font family for elements that\n * are expected to be rendered with a monospace font, falling\n * back to the system monospace stack if there is no configured\n * 'mono' font family.\n */\n\npre,\ncode,\nkbd,\nsamp {\n  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\", \"Courier New\", monospace;\n}\n\n/**\n * 1. Make replaced elements `display: block` by default as that's\n *    the behavior you want almost all of the time. Inspired by\n *    CSS Remedy, with `svg` added as well.\n *\n *    https://github.com/mozdevs/cssremedy/issues/14\n * \n * 2. Add `vertical-align: middle` to align replaced elements more\n *    sensibly by default when overriding `display` by adding a\n *    utility like `inline`.\n *\n *    This can trigger a poorly considered linting error in some\n *    tools but is included by design.\n * \n *    https://github.com/jensimmons/cssremedy/issues/14#issuecomment-634934210\n */\n\nimg,\nsvg,\nvideo,\ncanvas,\naudio,\niframe,\nembed,\nobject {\n  display: block; /* 1 */\n  vertical-align: middle; /* 2 */\n}\n\n/**\n * Constrain images and videos to the parent width and preserve\n * their intrinsic aspect ratio.\n *\n * https://github.com/mozdevs/cssremedy/issues/14\n */\n\nimg,\nvideo {\n  max-width: 100%;\n  height: auto;\n}\n\n/**\n * Ensure the default browser behavior of the `hidden` attribute.\n */\n\n[hidden] {\n  display: none;\n}\n\n*, ::before, ::after {\n	--tw-ring-offset-shadow: 0 0 #0000;\n	--tw-ring-shadow: 0 0 #0000;\n	--tw-shadow: 0 0 #0000;\n}.relative {\n	position: relative;\n}.sticky {\n	position: sticky;\n}.top-0 {\n	top: 0px;\n}.m-4 {\n	margin: 1rem;\n}.flex {\n	display: flex;\n}.hidden {\n	display: none;\n}.h-full {\n	height: 100%;\n}.h-10 {\n	height: 2.5rem;\n}.h-2 {\n	height: 0.5rem;\n}.w-full {\n	width: 100%;\n}.w-10 {\n	width: 2.5rem;\n}.w-2 {\n	width: 0.5rem;\n}.max-w-xl {\n	max-width: 36rem;\n}.flex-grow {\n	flex-grow: 1;\n}.flex-grow-0 {\n	flex-grow: 0;\n}.flex-row {\n	flex-direction: row;\n}.flex-col {\n	flex-direction: column;\n}.items-start {\n	align-items: flex-start;\n}.items-center {\n	align-items: center;\n}.justify-end {\n	justify-content: flex-end;\n}.space-y-3 > :not([hidden]) ~ :not([hidden]) {\n	--tw-space-y-reverse: 0;\n	margin-top: calc(0.75rem * calc(1 - var(--tw-space-y-reverse)));\n	margin-bottom: calc(0.75rem * var(--tw-space-y-reverse));\n}.space-x-1 > :not([hidden]) ~ :not([hidden]) {\n	--tw-space-x-reverse: 0;\n	margin-right: calc(0.25rem * var(--tw-space-x-reverse));\n	margin-left: calc(0.25rem * calc(1 - var(--tw-space-x-reverse)));\n}.space-x-10 > :not([hidden]) ~ :not([hidden]) {\n	--tw-space-x-reverse: 0;\n	margin-right: calc(2.5rem * var(--tw-space-x-reverse));\n	margin-left: calc(2.5rem * calc(1 - var(--tw-space-x-reverse)));\n}.space-y-4 > :not([hidden]) ~ :not([hidden]) {\n	--tw-space-y-reverse: 0;\n	margin-top: calc(1rem * calc(1 - var(--tw-space-y-reverse)));\n	margin-bottom: calc(1rem * var(--tw-space-y-reverse));\n}.self-start {\n	align-self: flex-start;\n}.justify-self-end {\n	justify-self: end;\n}.overflow-hidden {\n	overflow: hidden;\n}.rounded-2xl {\n	border-radius: 1rem;\n}.rounded-xl {\n	border-radius: 0.75rem;\n}.rounded-full {\n	border-radius: 9999px;\n}.bg-gray-100 {\n	--tw-bg-opacity: 1;\n	background-color: rgba(243, 244, 246, var(--tw-bg-opacity));\n}.bg-gray-50 {\n	--tw-bg-opacity: 1;\n	background-color: rgba(249, 250, 251, var(--tw-bg-opacity));\n}.bg-yellow-300 {\n	--tw-bg-opacity: 1;\n	background-color: rgba(252, 211, 77, var(--tw-bg-opacity));\n}.bg-gray-200 {\n	--tw-bg-opacity: 1;\n	background-color: rgba(229, 231, 235, var(--tw-bg-opacity));\n}.px-1 {\n	padding-left: 0.25rem;\n	padding-right: 0.25rem;\n}.pl-4 {\n	padding-left: 1rem;\n}.pt-4 {\n	padding-top: 1rem;\n}.pb-4 {\n	padding-bottom: 1rem;\n}.pr-8 {\n	padding-right: 2rem;\n}.text-3xl {\n	font-size: 1.875rem;\n	line-height: 2.25rem;\n}.text-base {\n	font-size: 1rem;\n	line-height: 1.5rem;\n}.text-2xl {\n	font-size: 1.5rem;\n	line-height: 2rem;\n}.font-bold {\n	font-weight: 700;\n}.text-gray-500 {\n	--tw-text-opacity: 1;\n	color: rgba(107, 114, 128, var(--tw-text-opacity));\n}.text-gray-600 {\n	--tw-text-opacity: 1;\n	color: rgba(75, 85, 99, var(--tw-text-opacity));\n}.shadow-2xl {\n	--tw-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);\n	box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);\n}.shadow-lg {\n	--tw-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);\n	box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);\n}@media (min-width: 640px) {\n\n	.sm\\:block {\n		display: block;\n	}\n\n	.sm\\:h-72 {\n		height: 18rem;\n	}\n}";
+const getStores = () => {
+  const stores = getContext("__svelte__");
+  return {
+    page: {
+      subscribe: stores.page.subscribe
+    },
+    navigating: {
+      subscribe: stores.navigating.subscribe
+    },
+    get preloading() {
+      console.error("stores.preloading is deprecated; use stores.navigating instead");
+      return {
+        subscribe: stores.navigating.subscribe
+      };
+    },
+    session: stores.session
+  };
+};
+const page = {
+  subscribe(fn) {
+    const store = getStores().page;
+    return store.subscribe(fn);
+  }
+};
+let teamImg = "../../pranav.png";
+const MenuBar = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+  let $page, $$unsubscribe_page;
+  $$unsubscribe_page = subscribe(page, (value) => $page = value);
+  let path;
+  let menuElement = [
+    {
+      name: "Home",
+      path: "/",
+      icon: '<svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 flex-grow-0" viewBox="0 0 20 20" fill="currentColor"><path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z" /></svg>'
+    },
+    {
+      name: "Blog",
+      path: "/blog",
+      icon: '<svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 flex-grow-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" /></svg>'
+    },
+    {
+      name: "About",
+      path: "/about",
+      icon: '<svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 flex-grow-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>'
+    }
+  ];
+  {
+    {
+      path = $page.path;
+      console.log($page.path);
+    }
+  }
+  $$unsubscribe_page();
+  return `<div id="${"menu"}" class="${"flex-col sticky top-0 self-start items-start pl-8 w-1\\/3 space-y-3 pt-4 "}"><div class="${""}"><img${add_attribute("src", teamImg, 0)} class="${"object-cover rounded-md "}" alt="${"team"}"></div>
+    <div class="${"relative font-bold"}">Team 7393
+    </div>
+
+    ${each(menuElement, (menu) => `<a${add_attribute("href", menu.path, 0)} class="${"transition hover: flex flex-row rounded-xl relative items-center bg-gray-50 px-4 space-x-3 " + escape(path === menu.path ? "text-gray-900 shadow-2xl" : "text-gray-400 shadow-sm") + ""}"><!-- HTML_TAG_START -->${menu.icon}<!-- HTML_TAG_END -->
+
+        <div class="${"font-bold w-full flex-grow text-2xl"}">${escape(menu.name)}</div>
+        <div class="${"bg-yellow-300 rounded-full w-3 h-3 top-0 right-0 -mr-1 -mt-1 absolute " + escape(path === menu.path ? "" : "hidden") + ""}"></div>
+    </a>`)}</div>`;
+});
+var __layout_svelte_svelte_type_style_lang = "/*! tailwindcss v2.2.15 | MIT License | https://tailwindcss.com *//*! modern-normalize v1.1.0 | MIT License | https://github.com/sindresorhus/modern-normalize */\n\n/*\nDocument\n========\n*/\n\n/**\nUse a better box model (opinionated).\n*/\n\n*,\n::before,\n::after {\n	box-sizing: border-box;\n}\n\n/**\nUse a more readable tab size (opinionated).\n*/\n\nhtml {\n	-moz-tab-size: 4;\n	-o-tab-size: 4;\n	   tab-size: 4;\n}\n\n/**\n1. Correct the line height in all browsers.\n2. Prevent adjustments of font size after orientation changes in iOS.\n*/\n\nhtml {\n	line-height: 1.15; /* 1 */\n	-webkit-text-size-adjust: 100%; /* 2 */\n}\n\n/*\nSections\n========\n*/\n\n/**\nRemove the margin in all browsers.\n*/\n\nbody {\n	margin: 0;\n}\n\n/**\nImprove consistency of default fonts in all browsers. (https://github.com/sindresorhus/modern-normalize/issues/3)\n*/\n\nbody {\n	font-family:\n		system-ui,\n		-apple-system, /* Firefox supports this but not yet `system-ui` */\n		'Segoe UI',\n		Roboto,\n		Helvetica,\n		Arial,\n		sans-serif,\n		'Apple Color Emoji',\n		'Segoe UI Emoji';\n}\n\n/*\nGrouping content\n================\n*/\n\n/**\n1. Add the correct height in Firefox.\n2. Correct the inheritance of border color in Firefox. (https://bugzilla.mozilla.org/show_bug.cgi?id=190655)\n*/\n\nhr {\n	height: 0; /* 1 */\n	color: inherit; /* 2 */\n}\n\n/*\nText-level semantics\n====================\n*/\n\n/**\nAdd the correct text decoration in Chrome, Edge, and Safari.\n*/\n\nabbr[title] {\n	-webkit-text-decoration: underline dotted;\n	        text-decoration: underline dotted;\n}\n\n/**\nAdd the correct font weight in Edge and Safari.\n*/\n\nb,\nstrong {\n	font-weight: bolder;\n}\n\n/**\n1. Improve consistency of default fonts in all browsers. (https://github.com/sindresorhus/modern-normalize/issues/3)\n2. Correct the odd 'em' font sizing in all browsers.\n*/\n\ncode,\nkbd,\nsamp,\npre {\n	font-family:\n		ui-monospace,\n		SFMono-Regular,\n		Consolas,\n		'Liberation Mono',\n		Menlo,\n		monospace; /* 1 */\n	font-size: 1em; /* 2 */\n}\n\n/**\nAdd the correct font size in all browsers.\n*/\n\nsmall {\n	font-size: 80%;\n}\n\n/**\nPrevent 'sub' and 'sup' elements from affecting the line height in all browsers.\n*/\n\nsub,\nsup {\n	font-size: 75%;\n	line-height: 0;\n	position: relative;\n	vertical-align: baseline;\n}\n\nsub {\n	bottom: -0.25em;\n}\n\nsup {\n	top: -0.5em;\n}\n\n/*\nTabular data\n============\n*/\n\n/**\n1. Remove text indentation from table contents in Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=999088, https://bugs.webkit.org/show_bug.cgi?id=201297)\n2. Correct table border color inheritance in all Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=935729, https://bugs.webkit.org/show_bug.cgi?id=195016)\n*/\n\ntable {\n	text-indent: 0; /* 1 */\n	border-color: inherit; /* 2 */\n}\n\n/*\nForms\n=====\n*/\n\n/**\n1. Change the font styles in all browsers.\n2. Remove the margin in Firefox and Safari.\n*/\n\nbutton,\ninput,\noptgroup,\nselect,\ntextarea {\n	font-family: inherit; /* 1 */\n	font-size: 100%; /* 1 */\n	line-height: 1.15; /* 1 */\n	margin: 0; /* 2 */\n}\n\n/**\nRemove the inheritance of text transform in Edge and Firefox.\n1. Remove the inheritance of text transform in Firefox.\n*/\n\nbutton,\nselect { /* 1 */\n	text-transform: none;\n}\n\n/**\nCorrect the inability to style clickable types in iOS and Safari.\n*/\n\nbutton,\n[type='button'],\n[type='reset'],\n[type='submit'] {\n	-webkit-appearance: button;\n}\n\n/**\nRemove the inner border and padding in Firefox.\n*/\n\n::-moz-focus-inner {\n	border-style: none;\n	padding: 0;\n}\n\n/**\nRestore the focus styles unset by the previous rule.\n*/\n\n:-moz-focusring {\n	outline: 1px dotted ButtonText;\n}\n\n/**\nRemove the additional ':invalid' styles in Firefox.\nSee: https://github.com/mozilla/gecko-dev/blob/2f9eacd9d3d995c937b4251a5557d95d494c9be1/layout/style/res/forms.css#L728-L737\n*/\n\n:-moz-ui-invalid {\n	box-shadow: none;\n}\n\n/**\nRemove the padding so developers are not caught out when they zero out 'fieldset' elements in all browsers.\n*/\n\nlegend {\n	padding: 0;\n}\n\n/**\nAdd the correct vertical alignment in Chrome and Firefox.\n*/\n\nprogress {\n	vertical-align: baseline;\n}\n\n/**\nCorrect the cursor style of increment and decrement buttons in Safari.\n*/\n\n::-webkit-inner-spin-button,\n::-webkit-outer-spin-button {\n	height: auto;\n}\n\n/**\n1. Correct the odd appearance in Chrome and Safari.\n2. Correct the outline style in Safari.\n*/\n\n[type='search'] {\n	-webkit-appearance: textfield; /* 1 */\n	outline-offset: -2px; /* 2 */\n}\n\n/**\nRemove the inner padding in Chrome and Safari on macOS.\n*/\n\n::-webkit-search-decoration {\n	-webkit-appearance: none;\n}\n\n/**\n1. Correct the inability to style clickable types in iOS and Safari.\n2. Change font properties to 'inherit' in Safari.\n*/\n\n::-webkit-file-upload-button {\n	-webkit-appearance: button; /* 1 */\n	font: inherit; /* 2 */\n}\n\n/*\nInteractive\n===========\n*/\n\n/*\nAdd the correct display in Chrome and Safari.\n*/\n\nsummary {\n	display: list-item;\n}/**\n * Manually forked from SUIT CSS Base: https://github.com/suitcss/base\n * A thin layer on top of normalize.css that provides a starting point more\n * suitable for web applications.\n */\n\n/**\n * Removes the default spacing and border for appropriate elements.\n */\n\nblockquote,\ndl,\ndd,\nh1,\nh2,\nh3,\nh4,\nh5,\nh6,\nhr,\nfigure,\np,\npre {\n  margin: 0;\n}\n\nbutton {\n  background-color: transparent;\n  background-image: none;\n}\n\nfieldset {\n  margin: 0;\n  padding: 0;\n}\n\nol,\nul {\n  list-style: none;\n  margin: 0;\n  padding: 0;\n}\n\n/**\n * Tailwind custom reset styles\n */\n\n/**\n * 1. Use the user's configured `sans` font-family (with Tailwind's default\n *    sans-serif font stack as a fallback) as a sane default.\n * 2. Use Tailwind's default \"normal\" line-height so the user isn't forced\n *    to override it to ensure consistency even when using the default theme.\n */\n\nhtml {\n  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"; /* 1 */\n  line-height: 1.5; /* 2 */\n}\n\n\n/**\n * Inherit font-family and line-height from `html` so users can set them as\n * a class directly on the `html` element.\n */\n\nbody {\n  font-family: inherit;\n  line-height: inherit;\n}\n\n/**\n * 1. Prevent padding and border from affecting element width.\n *\n *    We used to set this in the html element and inherit from\n *    the parent element for everything else. This caused issues\n *    in shadow-dom-enhanced elements like <details> where the content\n *    is wrapped by a div with box-sizing set to `content-box`.\n *\n *    https://github.com/mozdevs/cssremedy/issues/4\n *\n *\n * 2. Allow adding a border to an element by just adding a border-width.\n *\n *    By default, the way the browser specifies that an element should have no\n *    border is by setting it's border-style to `none` in the user-agent\n *    stylesheet.\n *\n *    In order to easily add borders to elements by just setting the `border-width`\n *    property, we change the default border-style for all elements to `solid`, and\n *    use border-width to hide them instead. This way our `border` utilities only\n *    need to set the `border-width` property instead of the entire `border`\n *    shorthand, making our border utilities much more straightforward to compose.\n *\n *    https://github.com/tailwindcss/tailwindcss/pull/116\n */\n\n*,\n::before,\n::after {\n  box-sizing: border-box; /* 1 */\n  border-width: 0; /* 2 */\n  border-style: solid; /* 2 */\n  border-color: currentColor; /* 2 */\n}\n\n/*\n * Ensure horizontal rules are visible by default\n */\n\nhr {\n  border-top-width: 1px;\n}\n\n/**\n * Undo the `border-style: none` reset that Normalize applies to images so that\n * our `border-{width}` utilities have the expected effect.\n *\n * The Normalize reset is unnecessary for us since we default the border-width\n * to 0 on all elements.\n *\n * https://github.com/tailwindcss/tailwindcss/issues/362\n */\n\nimg {\n  border-style: solid;\n}\n\ntextarea {\n  resize: vertical;\n}\n\ninput::-moz-placeholder, textarea::-moz-placeholder {\n  opacity: 1;\n  color: #9ca3af;\n}\n\ninput:-ms-input-placeholder, textarea:-ms-input-placeholder {\n  opacity: 1;\n  color: #9ca3af;\n}\n\ninput::placeholder,\ntextarea::placeholder {\n  opacity: 1;\n  color: #9ca3af;\n}\n\nbutton,\n[role=\"button\"] {\n  cursor: pointer;\n}\n\n/**\n * Override legacy focus reset from Normalize with modern Firefox focus styles.\n *\n * This is actually an improvement over the new defaults in Firefox in our testing,\n * as it triggers the better focus styles even for links, which still use a dotted\n * outline in Firefox by default.\n */\n \n:-moz-focusring {\n	outline: auto;\n}\n\ntable {\n  border-collapse: collapse;\n}\n\nh1,\nh2,\nh3,\nh4,\nh5,\nh6 {\n  font-size: inherit;\n  font-weight: inherit;\n}\n\n/**\n * Reset links to optimize for opt-in styling instead of\n * opt-out.\n */\n\na {\n  color: inherit;\n  text-decoration: inherit;\n}\n\n/**\n * Reset form element properties that are easy to forget to\n * style explicitly so you don't inadvertently introduce\n * styles that deviate from your design system. These styles\n * supplement a partial reset that is already applied by\n * normalize.css.\n */\n\nbutton,\ninput,\noptgroup,\nselect,\ntextarea {\n  padding: 0;\n  line-height: inherit;\n  color: inherit;\n}\n\n/**\n * Use the configured 'mono' font family for elements that\n * are expected to be rendered with a monospace font, falling\n * back to the system monospace stack if there is no configured\n * 'mono' font family.\n */\n\npre,\ncode,\nkbd,\nsamp {\n  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\", \"Courier New\", monospace;\n}\n\n/**\n * 1. Make replaced elements `display: block` by default as that's\n *    the behavior you want almost all of the time. Inspired by\n *    CSS Remedy, with `svg` added as well.\n *\n *    https://github.com/mozdevs/cssremedy/issues/14\n * \n * 2. Add `vertical-align: middle` to align replaced elements more\n *    sensibly by default when overriding `display` by adding a\n *    utility like `inline`.\n *\n *    This can trigger a poorly considered linting error in some\n *    tools but is included by design.\n * \n *    https://github.com/jensimmons/cssremedy/issues/14#issuecomment-634934210\n */\n\nimg,\nsvg,\nvideo,\ncanvas,\naudio,\niframe,\nembed,\nobject {\n  display: block; /* 1 */\n  vertical-align: middle; /* 2 */\n}\n\n/**\n * Constrain images and videos to the parent width and preserve\n * their intrinsic aspect ratio.\n *\n * https://github.com/mozdevs/cssremedy/issues/14\n */\n\nimg,\nvideo {\n  max-width: 100%;\n  height: auto;\n}\n\n/**\n * Ensure the default browser behavior of the `hidden` attribute.\n */\n\n[hidden] {\n  display: none;\n}\n\n*, ::before, ::after {\n	--tw-ring-offset-shadow: 0 0 #0000;\n	--tw-ring-shadow: 0 0 #0000;\n	--tw-shadow: 0 0 #0000;\n}.absolute {\n	position: absolute;\n}.relative {\n	position: relative;\n}.sticky {\n	position: sticky;\n}.top-0 {\n	top: 0px;\n}.right-0 {\n	right: 0px;\n}.-mr-1 {\n	margin-right: -0.25rem;\n}.-mt-1 {\n	margin-top: -0.25rem;\n}.flex {\n	display: flex;\n}.hidden {\n	display: none;\n}.h-full {\n	height: 100%;\n}.h-10 {\n	height: 2.5rem;\n}.h-3 {\n	height: 0.75rem;\n}.w-full {\n	width: 100%;\n}.w-10 {\n	width: 2.5rem;\n}.w-3 {\n	width: 0.75rem;\n}.max-w-xl {\n	max-width: 36rem;\n}.flex-grow {\n	flex-grow: 1;\n}.flex-grow-0 {\n	flex-grow: 0;\n}.flex-row {\n	flex-direction: row;\n}.flex-col {\n	flex-direction: column;\n}.items-start {\n	align-items: flex-start;\n}.items-center {\n	align-items: center;\n}.justify-end {\n	justify-content: flex-end;\n}.space-y-3 > :not([hidden]) ~ :not([hidden]) {\n	--tw-space-y-reverse: 0;\n	margin-top: calc(0.75rem * calc(1 - var(--tw-space-y-reverse)));\n	margin-bottom: calc(0.75rem * var(--tw-space-y-reverse));\n}.space-x-3 > :not([hidden]) ~ :not([hidden]) {\n	--tw-space-x-reverse: 0;\n	margin-right: calc(0.75rem * var(--tw-space-x-reverse));\n	margin-left: calc(0.75rem * calc(1 - var(--tw-space-x-reverse)));\n}.space-x-10 > :not([hidden]) ~ :not([hidden]) {\n	--tw-space-x-reverse: 0;\n	margin-right: calc(2.5rem * var(--tw-space-x-reverse));\n	margin-left: calc(2.5rem * calc(1 - var(--tw-space-x-reverse)));\n}.space-y-4 > :not([hidden]) ~ :not([hidden]) {\n	--tw-space-y-reverse: 0;\n	margin-top: calc(1rem * calc(1 - var(--tw-space-y-reverse)));\n	margin-bottom: calc(1rem * var(--tw-space-y-reverse));\n}.place-self-end {\n	place-self: end;\n}.self-start {\n	align-self: flex-start;\n}.overflow-hidden {\n	overflow: hidden;\n}.rounded-2xl {\n	border-radius: 1rem;\n}.rounded-md {\n	border-radius: 0.375rem;\n}.rounded-xl {\n	border-radius: 0.75rem;\n}.rounded-full {\n	border-radius: 9999px;\n}.bg-gray-100 {\n	--tw-bg-opacity: 1;\n	background-color: rgba(243, 244, 246, var(--tw-bg-opacity));\n}.bg-gray-50 {\n	--tw-bg-opacity: 1;\n	background-color: rgba(249, 250, 251, var(--tw-bg-opacity));\n}.bg-yellow-300 {\n	--tw-bg-opacity: 1;\n	background-color: rgba(252, 211, 77, var(--tw-bg-opacity));\n}.bg-gray-200 {\n	--tw-bg-opacity: 1;\n	background-color: rgba(229, 231, 235, var(--tw-bg-opacity));\n}.object-cover {\n	-o-object-fit: cover;\n	   object-fit: cover;\n}.px-4 {\n	padding-left: 1rem;\n	padding-right: 1rem;\n}.pl-4 {\n	padding-left: 1rem;\n}.pt-4 {\n	padding-top: 1rem;\n}.pb-4 {\n	padding-bottom: 1rem;\n}.pl-8 {\n	padding-left: 2rem;\n}.pr-8 {\n	padding-right: 2rem;\n}.text-3xl {\n	font-size: 1.875rem;\n	line-height: 2.25rem;\n}.text-base {\n	font-size: 1rem;\n	line-height: 1.5rem;\n}.text-2xl {\n	font-size: 1.5rem;\n	line-height: 2rem;\n}.font-bold {\n	font-weight: 700;\n}.text-gray-500 {\n	--tw-text-opacity: 1;\n	color: rgba(107, 114, 128, var(--tw-text-opacity));\n}.text-gray-900 {\n	--tw-text-opacity: 1;\n	color: rgba(17, 24, 39, var(--tw-text-opacity));\n}.text-gray-400 {\n	--tw-text-opacity: 1;\n	color: rgba(156, 163, 175, var(--tw-text-opacity));\n}.shadow-2xl {\n	--tw-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);\n	box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);\n}.shadow-sm {\n	--tw-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);\n	box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);\n}.shadow-lg {\n	--tw-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);\n	box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);\n}.transition {\n	transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;\n	transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;\n	transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;\n	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);\n	transition-duration: 150ms;\n}@media (min-width: 640px) {\n\n	.sm\\:block {\n		display: block;\n	}\n\n	.sm\\:h-72 {\n		height: 18rem;\n	}\n}";
 const css = {
   code: "@tailwind base;@tailwind components;@tailwind utilities;",
-  map: '{"version":3,"file":"__layout.svelte","sources":["__layout.svelte"],"sourcesContent":["<style global lang=\\"postcss\\">\\n    @tailwind base;\\n    @tailwind components;\\n    @tailwind utilities;\\n</style>\\n\\n<slot></slot>"],"names":[],"mappings":"AACI,UAAU,IAAI,CAAC,AACf,UAAU,UAAU,CAAC,AACrB,UAAU,SAAS,CAAC"}'
+  map: `{"version":3,"file":"__layout.svelte","sources":["__layout.svelte"],"sourcesContent":["<style global lang=\\"postcss\\">\\n    @tailwind base;\\n    @tailwind components;\\n    @tailwind utilities;\\n</style>\\n\\n<script>\\n    import MenuBar from '../lib/menuBar.svelte'\\n<\/script>\\n\\n<div class=\\"flex flex-row space-x-10 bg-gray-200 h-min-screen\\">\\n    <MenuBar/>\\n        <slot></slot>\\n    <div id=\\"tweet\\"class=\\"hidden sm:block sticky top-0 pr-8 w-1\\\\/3 self-start place-self-end\\">\\n        <div class=\\"rounded-2xl overflow-hidden shadow-lg max-w-xl\\">\\n            <a class=\\"twitter-timeline\\" data-height=\\"500\\" href=\\"https://twitter.com/electronVoltFTC?ref_src=twsrc%5Etfw\\">Tweets by electronVoltFTC</a> <script async src=\\"https://platform.twitter.com/widgets.js\\" charset=\\"utf-8\\"><\/script>\\n        </div>\\n    </div>\\n</div>\\n\\n\\n"],"names":[],"mappings":"AACI,UAAU,IAAI,CAAC,AACf,UAAU,UAAU,CAAC,AACrB,UAAU,SAAS,CAAC"}`
 };
 const _layout = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   $$result.css.add(css);
-  return `${slots.default ? slots.default({}) : ``}`;
+  return `<div class="${"flex flex-row space-x-10 bg-gray-200 h-min-screen"}">${validate_component(MenuBar, "MenuBar").$$render($$result, {}, {}, {})}
+        ${slots.default ? slots.default({}) : ``}
+    <div id="${"tweet"}" class="${"hidden sm:block sticky top-0 pr-8 w-1\\/3 self-start place-self-end"}"><div class="${"rounded-2xl overflow-hidden shadow-lg max-w-xl"}"><a class="${"twitter-timeline"}" data-height="${"500"}" href="${"https://twitter.com/electronVoltFTC?ref_src=twsrc%5Etfw"}">Tweets by electronVoltFTC</a> <script async src="${"https://platform.twitter.com/widgets.js"}" charset="${"utf-8"}"><\/script></div></div></div>`;
 });
 var __layout = /* @__PURE__ */ Object.freeze({
   __proto__: null,
@@ -1559,20 +1656,6 @@ const Card = create_ssr_component(($$result, $$props, $$bindings, slots) => {
     <div class="${"text-3xl pl-4 pt-4"}">${escape(title)}</div>
     <div class="${"text-base text-gray-500 pl-4 pb-4"}">${escape(description)}</div></div>`;
 });
-const MenuBar = create_ssr_component(($$result, $$props, $$bindings, slots) => {
-  return `<div id="${"menu"}" class="${"flex-col sticky top-0 items-start pl-4 w-1\\/3 space-y-3 self-start"}"><div class="${"relative "}">Team 7393
-    </div>
-    <div class="${"flex flex-row rounded-xl shadow-2xl bg-gray-50 px-1 space-x-1"}"><svg xmlns="${"http://www.w3.org/2000/svg"}" class="${"h-10 w-10 flex-grow-0"}" viewBox="${"0 0 20 20"}" fill="${"currentColor"}"><path d="${"M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"}"></path></svg>
-        <div class="${"text-gray-600 font-bold w-full flex-grow text-2xl"}">Home
-        </div>
-        <div class="${"bg-yellow-300 rounded-full w-2 h-2 m-4 justify-self-end"}"></div></div>
-    <div class="${"flex flex-row rounded-xl shadow-2xl items-center bg-gray-50 px-1 space-x-1"}"><svg xmlns="${"http://www.w3.org/2000/svg"}" class="${"h-10 w-10 flex-grow-0"}" fill="${"none"}" viewBox="${"0 0 24 24"}" stroke="${"currentColor"}"><path stroke-linecap="${"round"}" stroke-linejoin="${"round"}" stroke-width="${"2"}" d="${"M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"}"></path></svg>
-        <div class="${"text-gray-600 font-bold w-full flex-grow text-2xl"}">Blog
-        </div></div>
-    <div class="${"flex flex-row rounded-xl shadow-2xl items-center bg-gray-50 px-1 space-x-1"}"><svg xmlns="${"http://www.w3.org/2000/svg"}" class="${"h-10 w-10 flex-grow-0"}" fill="${"none"}" viewBox="${"0 0 24 24"}" stroke="${"currentColor"}"><path stroke-linecap="${"round"}" stroke-linejoin="${"round"}" stroke-width="${"2"}" d="${"M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"}"></path></svg>
-        <div class="${"text-gray-600 font-bold w-full flex-grow text-2xl"}">About
-        </div></div></div>`;
-});
 const bruhFeed = [
   {
     title: "bruh moment",
@@ -1609,17 +1692,32 @@ const Routes = create_ssr_component(($$result, $$props, $$bindings, slots) => {
 
 
 
-<body class="${"bg-gray-200"}"><div class="${"flex flex-row space-x-10"}">${validate_component(MenuBar, "MenuBar").$$render($$result, {}, {}, {})}
-        <div id="${"feed"}" class="${"flex flex-col space-y-4 w-full"}">${each(feeds, (feed) => `${validate_component(Card, "Card").$$render($$result, {
+
+<div id="${"feed"}" class="${"flex flex-col space-y-4 w-full"}">${each(feeds, (feed) => `${validate_component(Card, "Card").$$render($$result, {
     title: feed.title,
     description: feed.description,
     ytlink: feed.ytlink
-  }, {}, {})}`)}</div>
-        <div id="${"tweet"}" class="${"hidden sm:block sticky top-0 pr-8 w-1\\/3 self-start"}"><div class="${"rounded-2xl overflow-hidden shadow-lg max-w-xl"}"><a class="${"twitter-timeline"}" data-height="${"500"}" href="${"https://twitter.com/electronVoltFTC?ref_src=twsrc%5Etfw"}">Tweets by electronVoltFTC</a> <script async src="${"https://platform.twitter.com/widgets.js"}" charset="${"utf-8"}"><\/script></div></div></div></body>`;
+  }, {}, {})}`)}</div>`;
 });
 var index = /* @__PURE__ */ Object.freeze({
   __proto__: null,
   [Symbol.toStringTag]: "Module",
   "default": Routes
+});
+const About = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+  return `<p>you are bad</p>`;
+});
+var about = /* @__PURE__ */ Object.freeze({
+  __proto__: null,
+  [Symbol.toStringTag]: "Module",
+  "default": About
+});
+const Blog = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+  return `<p>bruh</p>`;
+});
+var blog = /* @__PURE__ */ Object.freeze({
+  __proto__: null,
+  [Symbol.toStringTag]: "Module",
+  "default": Blog
 });
 export { init, render };
