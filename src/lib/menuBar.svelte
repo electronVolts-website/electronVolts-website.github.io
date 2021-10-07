@@ -18,7 +18,7 @@ let menuElement = [
 ]
 </script>
 
-<div id="menu" class="flex-col sticky top-0 self-start items-start pl-8 w-1\/3 space-y-3 pt-4 ">
+<div id="menu" class="flex-col sticky top-0 self-start items-start pl-8 w-1\/3 space-y-3">
     <div class="">
         <img src={teamImg} class="object-cover rounded-md " alt="team">
     </div>
