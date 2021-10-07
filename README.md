@@ -1,11 +1,11 @@
-##list of packages/librarys used
+## list of packages/librarys used
 
 - svelte
 - tailwindCSS
 
-##work in progress
+## work in progress
 - markdown & pages support
 - async lazyloading
 
-##features
+## features
 - go find those urself
