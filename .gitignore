@@ -103,5 +103,5 @@ dist
 # TernJS port file
 .tern-port
 
-.svelte-kit
+.svelte-kit/
 .DS_Store
