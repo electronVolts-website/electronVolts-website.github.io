@@ -1,23 +1,44 @@
 import { writable } from 'svelte/store'
-
-
-import fs, { read } from 'fs'
+import {readdir, readFile} from 'fs/promises'
+import fm from 'front-matter'
 
 export const blogs = writable([])
 
-let readData = []
 
 const readMarkdown = async () => {
-    
-    fs.readdir('src/blog', (err, files) => {
-        if(err){
-            console.log(err)
+    let markdownJSON = []
+
+    try {
+        const files = await readdir('src/blog')
+
+        //for loop here so it doesnt do everything at once
+        for(const fileName of files){
+            console.log(fileName)
+            const fileContent = await readFile(`src/blog/${fileName}`, 'utf8')
+            markdownJSON.push(fm(fileContent))
+            console.log(fileContent)
         }
-        console.log('bruh')
-        files.forEach(file => readData.push(file))
-        console.table(readData)
-        console.table(blogs)
-    })
+        console.log(markdownJSON)
+    }catch (err){
+        console.error(err)
+    }
+    
+
+    // fs.readdir('src/blog', (err, files) => {
+    //     if(err)console.log(err)
+
+    //     files.forEach(file => {
+    //         //console.log(file)
+    //         fs.readFile(`src/blog/${file}`, 'utf8', (error, data) =>{
+    //             console.log(fm(data))
+    //             readData.push(fm(data))
+    //         })
+    //     })
+        
+    // }).then( () => {
+    //     return readData
+    // })
+    
 }
 
 readMarkdown()

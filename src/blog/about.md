@@ -1,5 +1,13 @@
 ---
-title: about
+title: 100 reasons why pranav bad
 date: 2020-02-23 19:20:33
-layout: about
+description: pranav mode ON
 ---
+
+## pranav moment
+
+***pranav test***
+
+```js
+console.pranav()
+```
