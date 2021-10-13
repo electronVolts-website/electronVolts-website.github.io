@@ -1,0 +1,1 @@
+//this endpoint is going to return all the paths of the blog files

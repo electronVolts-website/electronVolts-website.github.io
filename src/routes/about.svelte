@@ -5,6 +5,7 @@ import ProfileCard from "../lib/profileCard.svelte"
 
 let pranavImg = "../../pranav.png"
 
+import {blogs} from '../stores/getMarkdown'
 
 
 //let markdown = marked(text)
@@ -22,7 +23,12 @@ let pranavImg = "../../pranav.png"
         <ProfileCard img={pranavImg}/>
     </div>
     <div class="bg-gray-100 rounded-xl p-8 mt-4">
-        
+        $blog
     </div>
 </div>
 
+<script context="module">
+    export async function load({page}){
+        
+    }
+</script>
