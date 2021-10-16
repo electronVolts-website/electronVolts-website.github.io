@@ -21,7 +21,10 @@
     "@fontsource/fira-mono": "^4.5.0",
     "@lukeed/uuid": "^2.0.0",
     "cookie": "^0.4.1",
+    "dayjs": "^1.10.7",
     "front-matter": "^4.0.2",
+    "remark": "^14.0.1",
+    "strip-markdown": "^5.0.0",
     "to-vfile": "^7.2.2",
     "vfile-find-down": "^6.0.0"
   }

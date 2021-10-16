@@ -5,19 +5,13 @@
 // import { findDown } from 'vfile-find-down'
 // import fm from 'front-matter'
 
-import { readdir } from 'fs/promises'
 
 // export const blogs = writable(0)
 
 export let get = ({ params }) => {
     const { slug } = params
 
-    try{
-        const files = await readdir('src/blog')
-
-    } catch (err) {
-
-    }
+    
     
     
 
