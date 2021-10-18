@@ -2,6 +2,7 @@
 title: 100 reasons why pranav bad
 date: 2021-02-23 19:20:33
 description: pranav mode ON
+thumbnail: pranav
 ---
 
 
