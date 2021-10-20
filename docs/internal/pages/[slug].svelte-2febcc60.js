@@ -1,1 +1,0 @@
-import{S as l,i as a,s as u}from"../chunks/vendor-b5deab42.js";async function c({page:n,fetch:s}){const t=n.params.slug;return{props:{blog:await s(`${t}.json`).then(o=>o.json())}}}function r(n,s,t){let{blog:e}=s;return n.$$set=o=>{"blog"in o&&t(0,e=o.blog)},[e]}class g extends l{constructor(s){super();a(this,s,r,null,u,{blog:0})}}export{g as default,c as load};

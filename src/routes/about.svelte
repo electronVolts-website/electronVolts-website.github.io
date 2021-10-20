@@ -20,6 +20,16 @@ let pranavImg = "../../pranav.png"
         <ProfileCard img={pranavImg}/>
         <ProfileCard img={pranavImg}/>
         <ProfileCard img={pranavImg}/>
+        <ProfileCard img={pranavImg}/>
+        <ProfileCard img={pranavImg}/>
+        <ProfileCard img={pranavImg}/>
+        <ProfileCard img={pranavImg}/>
+        <ProfileCard img={pranavImg}/>
+        <ProfileCard img={pranavImg}/>
+        <ProfileCard img={pranavImg}/>
+        <ProfileCard img={pranavImg}/>
+        <ProfileCard img={pranavImg}/>
+        
     </div>
     <div class="bg-gray-100 rounded-xl p-8 mt-4">
         $blog

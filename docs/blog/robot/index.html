@@ -16,7 +16,7 @@
 		<link rel="modulepreload" href="/internal/chunks/vendor-838079fe.js">
 		<link rel="modulepreload" href="/internal/chunks/paths-28a87002.js">
 		<link rel="modulepreload" href="/internal/pages/__layout.svelte-fbd0d644.js">
-		<link rel="modulepreload" href="/internal/pages/blog.svelte-f79c9502.js">
+		<link rel="modulepreload" href="/internal/pages/blog/[slug].svelte-1f8ab65f.js">
 		<link rel="stylesheet" href="/internal/assets/start-d5b4de3e.css">
 		<link rel="stylesheet" href="/internal/assets/pages/__layout.svelte-2727b476.css">
 
@@ -35,13 +35,13 @@
 					error: null,
 					nodes: [
 						import("/internal/pages/__layout.svelte-fbd0d644.js"),
-						import("/internal/pages/blog.svelte-f79c9502.js")
+						import("/internal/pages/blog/[slug].svelte-1f8ab65f.js")
 					],
 					page: {
 						host: location.host, // TODO this is redundant
-						path: "\u002Fblog",
+						path: "\u002Fblog\u002Frobot",
 						query: new URLSearchParams(""),
-						params: {}
+						params: {slug:"robot"}
 					}
 				}
 			});
@@ -71,33 +71,26 @@
         <div class="font-bold w-full flex-grow text-2xl">About</div>
         <div class="bg-yellow-300 rounded-full w-3 h-3 top-0 right-0 -mr-1 -mt-1 absolute hidden"></div>
     </a></div>
-    <div class="flex flex-col space-y-2 bg-gray-100 rounded-xl p-3 mt-2 w-full"><div id="blogCard" class="bg-gray-200 rounded-xl p-8"><a href="blog/bruhmoment" class="font-bold">100 reasons why pranav bad</a>
-            
-            <br>
-            <div class="text-gray-600 font-medium">pranav mode ON</div>
-            <div class="text-gray-600 font-medium">02-23-2021</div>
-        </div><div id="blogCard" class="bg-gray-200 rounded-xl p-8"><a href="blog/robot" class="font-bold">100 reasons why pranav bad</a>
-            
-            <br>
-            <div class="text-gray-600 font-medium">pranav mode ON</div>
-            <div class="text-gray-600 font-medium">02-23-2020</div>
-        </div><div id="blogCard" class="bg-gray-200 rounded-xl p-8"><a href="blog/about" class="font-bold">100 reasons why pranav bad</a>
-            
-            <br>
-            <div class="text-gray-600 font-medium">pranav mode ON</div>
-            <div class="text-gray-600 font-medium">02-23-2019</div>
-        </div><div id="blogCard" class="bg-gray-200 rounded-xl p-8"><a href="blog/pranav" class="font-bold">100 reasons why pranav bad</a>
-            
-            <br>
-            <div class="text-gray-600 font-medium">pranav mode ON</div>
-            <div class="text-gray-600 font-medium">02-23-2008</div>
-        </div></div>
+    
+
+
+
+
+
+
+<div><div id="blogCard" class="bg-gray-50 rounded-xl p-8"><div class="font-bold text-3xl pb-4">100 reasons why pranav bad</div>
+        <div class="font-medium text-lg pb-4">02-23-2020</div>
+        <div class="font-medium text-base pb-4 text-gray-600">pranav mode ON</div>
+        <div class="prose"><!-- HTML_TAG_START --><h2>pranav moment</h2>
+<p><em><strong>pranav test</strong></em></p>
+<pre><code class="hljs language-js"><span class="hljs-built_in">console</span>.pranav()
+</code></pre><!-- HTML_TAG_END --></div></div></div>
     <div id="tweet" class="hidden sm:block sticky top-0 pr-8 w-1\/3 self-start place-self-end"><div class="rounded-2xl overflow-hidden shadow-lg max-w-xl"><a class="twitter-timeline" data-height="500" href="https://twitter.com/electronVoltFTC?ref_src=twsrc%5Etfw">Tweets by electronVoltFTC</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></div></div></div>
 </div>
 
 
 
-			<script type="application/json" data-type="svelte-data" data-url="/blogs.json">{"status":200,"statusText":"","headers":{"content-type":"application/json; charset=utf-8"},"body":"[{\"title\":\"100 reasons why pranav bad\",\"desc\":\"pranav mode ON\",\"unixDate\":1614108033,\"date\":\"02-23-2021\",\"body\":\"## pranav moment\\n\\n***pranav test***\\n\\n```js\\nconsole.pranav()\\n```\\n\\n\\n\\n\\n### this is a bruh moment test\\n\\n\\nim going to cry this is actually working\\n\\ni hate esm module why cant vite be just perfect\\n\\nscrew vue\\n\\nevan you plz work on vite plzzzzz\\n\\nthe future belongs to sveltkit\\n\\n```js\\n\\nfor(let bruh = 0; bruh \u003C 100000; bruh++){\\n    console.log('pranav why are you bad')\\n}\\n```\\n\\n\",\"path\":\"bruhmoment\",\"thumbnail\":\"pranav\"},{\"title\":\"100 reasons why pranav bad\",\"desc\":\"pranav mode ON\",\"unixDate\":1582485633,\"date\":\"02-23-2020\",\"body\":\"## pranav moment\\n\\n***pranav test***\\n\\n```js\\nconsole.pranav()\\n```\",\"path\":\"robot\"},{\"title\":\"100 reasons why pranav bad\",\"desc\":\"pranav mode ON\",\"unixDate\":1550949633,\"date\":\"02-23-2019\",\"body\":\"## pranav moment\\n\\n***pranav test***\\n\\n```js\\nconsole.pranav()\\n```\",\"path\":\"about\"},{\"title\":\"100 reasons why pranav bad\",\"desc\":\"pranav mode ON\",\"unixDate\":1203794433,\"date\":\"02-23-2008\",\"body\":\"## pranav moment\\n\\n***pranav test***\\n\\n```js\\nconsole.pranav()\\n```\",\"path\":\"pranav\"}]"}</script>
+			<script type="application/json" data-type="svelte-data" data-url="robot.json">{"status":200,"statusText":"","headers":{"content-type":"application/json; charset=utf-8"},"body":"{\"title\":\"100 reasons why pranav bad\",\"desc\":\"pranav mode ON\",\"unixDate\":1582485633,\"date\":\"02-23-2020\",\"body\":\"\u003Ch2\u003Epranav moment\u003C\u002Fh2\u003E\\n\u003Cp\u003E\u003Cem\u003E\u003Cstrong\u003Epranav test\u003C\u002Fstrong\u003E\u003C\u002Fem\u003E\u003C\u002Fp\u003E\\n\u003Cpre\u003E\u003Ccode class=\\\"hljs language-js\\\"\u003E\u003Cspan class=\\\"hljs-built_in\\\"\u003Econsole\u003C\u002Fspan\u003E.pranav()\\n\u003C\u002Fcode\u003E\u003C\u002Fpre\u003E\",\"path\":\"robot\"}"}</script>
 		</div>
 	</body>
 </html>
