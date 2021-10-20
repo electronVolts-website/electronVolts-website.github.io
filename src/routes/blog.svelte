@@ -12,7 +12,7 @@ export async function load({ fetch }) {
 
     const res = await fetch(`${base}/blogs.json`)
     const blogs = await res.json()
-    console.log(blogs)
+    //console.log(blogs)
     return {
         props: { blogs }
     }
@@ -21,10 +21,7 @@ export async function load({ fetch }) {
 
 </script>
 
-
-
-
-<div class="flex flex-col space-y-2 bg-gray-100 rounded-xl p-3 mt-2">
+<div class="flex flex-col space-y-2 bg-gray-100 rounded-xl p-3 mt-2 w-full">
     {#each blogs as blog}
         <div id="blogCard" class="bg-gray-200 rounded-xl p-8">
             <a href="blog/{blog.path}" class="font-bold">

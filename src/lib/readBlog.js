@@ -18,7 +18,7 @@ export let readBlog = async (fileName) => {
         path: fileName,
         thumbnail: metadataFrontMatter.attributes.thumbnail
     }
-    console.log(blogJSON)
+    //console.log(blogJSON)
     return blogJSON
 
 }

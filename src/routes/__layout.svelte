@@ -1,10 +1,13 @@
-
+<svelte:head>
+    <link rel="stylesheet"
+      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/styles/github-dark.min.css">
+</svelte:head>
 
 <script>
     import MenuBar from '../lib/menuBar.svelte'
 </script>
-
-<div class="flex flex-row space-x-10 bg-gray-200 min-h-screen pt-4">
+<div class="bg-gray-200">
+    <div class="flex flex-row space-x-10 min-h-screen pt-4 container">
     <MenuBar/>
     <slot></slot>
     <div id="tweet"class="hidden sm:block sticky top-0 pr-8 w-1\/3 self-start place-self-end">
@@ -13,6 +16,8 @@
         </div>
     </div>
 </div>
+</div>
+
 
 
 
@@ -21,5 +26,7 @@
     @tailwind components;
     @tailwind utilities;
 
-
+    
+    /* https://github.com/tailwindlabs/tailwindcss/issues/1460 */
+    
 </style>
