@@ -11,14 +11,15 @@ export let readBlog = async (fileName) => {
 
     const blogJSON = {
         title: metadataFrontMatter?.attributes?.title,
-        desc: metadataFrontMatter?.attributes?.description,
+        desc: metadataFrontMatter?.attributes?.description.replace("\n", '<br>'),
         unixDate: dayjs(metadataFrontMatter.attributes.date).unix(),
         date: dayjs(metadataFrontMatter.attributes.date).format('MM-DD-YYYY'),
         body: metadataFrontMatter?.body,
         path: fileName,
         thumbnail: metadataFrontMatter.attributes.thumbnail
     }
-    //console.log(blogJSON)
+    console.log(blogJSON.desc)
     return blogJSON
 
 }
+

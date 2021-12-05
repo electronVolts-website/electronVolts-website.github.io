@@ -13,7 +13,8 @@ const config = {
 			fallback: null
 		}),
 		appDir: 'internal',
-	}
+		
+	},
 };
 
 export default config;
