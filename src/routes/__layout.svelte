@@ -10,9 +10,11 @@
     import AustralianToggleSwitch from '$lib/australianToggleSwitch.svelte'
     let embedURL = "https://twitter.com/electronVoltFTC"
 
-
+//hey guys, i am amogus sussy baka 69 sussy sussed sus
 
 </script>
+
+
 <div class="{$mode}">
     <div class="bg-white dark:bg-gray-600">
         <div class="flex flex-row min-h-screen">
