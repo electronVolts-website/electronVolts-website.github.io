@@ -1,13 +1,14 @@
 ---
-title: 100 reasons why pranav bad
+title: About us
 date: 2019-02-23 19:20:33
-description: pranav mode ON
+description: About Our Team
+thumbnail: static/pranav.png
 ---
 
-## pranav moment
+## Hello from team 7393
 
-***pranav test***
+We are a team of people enthusiastic about robotics located at ashton maryland.
 
-```js
-console.pranav()
-```
+This team is founded in 2013
+
+![sussy baka](/pranav.png)

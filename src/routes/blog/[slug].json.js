@@ -9,8 +9,8 @@ export let get = async ({ params }) => {
     const { slug } = params
     //console.log(slug)
     let rawJSON = await readBlog(slug)
-
     rawJSON = await processMarkdown(rawJSON)
+    
     return { body: rawJSON}
 
 }
