@@ -4,7 +4,7 @@
 - tailwindCSS
 
 ## work in progress
-- ~~markdown & pages support
+- ~~markdown & pages support~~
 - async lazyloading
 
 ## features
