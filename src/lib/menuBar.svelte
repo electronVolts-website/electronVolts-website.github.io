@@ -36,15 +36,13 @@ let menuElement = [
         </div> -->
         <div class=''>
             {#each menuElement as menu}
-                <a href={menu.path} class="transition  flex flex-row  relative items-center px-4 space-x-3 {(menu.path.startsWith("/blog") && path.startsWith("/blog")) || path == menu.path ? 'bg-lmao-yellow dark:text-gray-200 shadow-2xl' : 'text-gray-400'} ">
+                <a href={menu.path} class="transition  flex flex-row  relative items-center px-4 space-x-3 {(menu.path.startsWith("/blog")) || path == menu.path ? 'bg-lmao-yellow dark:text-gray-200 shadow-2xl' : 'text-gray-400'}">
                         {@html menu.icon}
 
                     <div class="font-bold w-full flex-grow text-2xl">
                         {menu.name}
                     </div>
-                    <!-- <div class="bg-yellow-300 dark:bg-yellow-200 rounded-full w-3 h-3 top-0 right-0 -mr-1 -mt-1 absolute {(menu.path.startsWith("/blog") && path.startsWith("/blog")) || path == menu.path ? '' : 'hidden'} "> -->
 
-                    <!-- </div> -->
                 </a>
             {/each}
         </div>

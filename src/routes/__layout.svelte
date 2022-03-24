@@ -7,6 +7,8 @@
     //import ToggleSwitch from '$lib/toggleSwitch.svelte';
     import MenuBar from '$lib/menuBar.svelte'
     import {mode, state} from '$lib/states.js'
+    import toggleSwitch from '$lib/toggleSwitch.svelte'
+    import australianToggleSwitch from "$lib/australianToggleSwitch.svelte";
     //import AustralianToggleSwitch from '$lib/australianToggleSwitch.svelte'
     //let embedURL = "https://twitter.com/electronVoltFTC"
 
@@ -27,7 +29,7 @@
             <MenuBar/>
             <slot></slot>
             <div class="flex flex-col space-y-2 mx-6 ">
-                <!-- <div class="flex flex-col space-y-2 pt-6 ">
+                <div class="flex flex-col space-y-2 pt-6 ">
                     <div class="flex flex-row space-x-2">
                         <ToggleSwitch></ToggleSwitch>
                         <p class="dark:text-gray-200">dark mode</p>
@@ -36,13 +38,13 @@
                         <AustralianToggleSwitch></AustralianToggleSwitch>
                         <p class="dark:text-gray-200">australian mode</p>
                     </div>
-                </div> -->
-                <!-- <div id="twt"class="hidden sm:block sticky top-0 w-1\/3 self-start place-self-end {$state}">
+                </div>
+                <div id="twt"class="hidden sm:block sticky top-0 w-1\/3 self-start place-self-end {$state}">
                     <div class="rounded-2xl overflow-hidden shadow-lg max-w-xl">
-                        <a class="twitter-timeline" data-height="500" data-theme="{$mode}" href="{embedURL}">Tweets by electronVoltFTC</a> 
+                        <a class="twitter-timeline" data-height="500" data-theme="{$mode}" href="{embedURL}">Tweets by electronVoltFTC</a>
                         <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
                     </div>
-                </div> -->
+                </div>
             </div>
         </div>
     </div>
