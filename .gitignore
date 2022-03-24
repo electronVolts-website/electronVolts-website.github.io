@@ -1,3 +1,6 @@
+# when i switched to webstorm, which is kinda sus
+.idea*
+
 # Logs
 logs
 *.log
