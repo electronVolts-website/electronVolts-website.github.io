@@ -5,14 +5,14 @@ import {mode} from '$lib/states.js'
 
 let pranavImg = "../../pranav.png"
 $: {
-    if($mode == ""){
+    if($mode === ""){
         pranavImg = "../../pranav.png"
     }else[
         pranavImg = "../../pranavDarkMode.png"
     ]
     
 }
-
+    
 
 export let blog
 </script>

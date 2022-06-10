@@ -1,40 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="ALL" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="de0c4327-5b9c-4a5d-812d-695f886460e8" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/docs/about/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/blog/about.json" beforeDir="false" afterPath="$PROJECT_DIR$/docs/blog/about.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/blog/about/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/blog/bruhmoment.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/blog/bruhmoment/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/blog/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/blog/pranav.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/blog/pranav/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/blog/robot.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/blog/robot/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/blogs.json" beforeDir="false" afterPath="$PROJECT_DIR$/docs/blogs.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/internal/assets/pages/__layout.svelte-64353465.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/internal/assets/start-d5b4de3e.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/internal/chunks/paths-28a87002.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/internal/chunks/states-dd9c1dae.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/internal/chunks/vendor-41046965.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/internal/error.svelte-819a9d15.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/internal/pages/__layout.svelte-a0bc55e6.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/internal/pages/about.svelte-b186f47f.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/internal/pages/blog.svelte-1f9e4f80.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/internal/pages/blog/_slug_.svelte-596b64b6.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/internal/pages/index.svelte-0c18434a.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/internal/start-481bdf75.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/jsconfig.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/blog/about.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/blog/about.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/australianToggleSwitch.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/australianToggleSwitch.svelte" afterDir="false" />
+    <list default="true" id="1510765a-7462-4e86-b6c4-099590de53b5" name="Default Changelist" comment="Default Changelist">
+      <change afterPath="$PROJECT_DIR$/../PranavScraper/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../PranavScraper/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../PranavScraper/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../PranavScraper/go.mod" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../PranavScraper/go.sum" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../PranavScraper/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Siala/.idea/Siala.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/CNAME" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/lib/menuBar.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/menuBar.svelte" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/routes/__layout.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/__layout.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/blog/[slug].svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/blog/[slug].svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/svelte.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/svelte.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/about.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/about.svelte" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tailwind.config.cjs" beforeDir="false" afterPath="$PROJECT_DIR$/tailwind.config.cjs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -42,7 +27,28 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Go File" />
+      </list>
+    </option>
+  </component>
+  <component name="GOROOT" url="file:///opt/homebrew/Cellar/go/1.18.2/libexec" />
   <component name="Git.Settings">
+    <favorite-branches>
+      <branch-storage>
+        <map>
+          <entry type="LOCAL">
+            <value>
+              <list>
+                <branch-info repo="$PROJECT_DIR$" source="original" />
+              </list>
+            </value>
+          </entry>
+        </map>
+      </branch-storage>
+    </favorite-branches>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitSEFilterConfiguration">
@@ -53,62 +59,107 @@
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
   </component>
+  <component name="GoLibraries">
+    <option name="indexEntireGoPath" value="false" />
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectId" id="26c1l7E3LHzngGIKAuXZ8b4HOuS" />
+  <component name="ProjectId" id="24fluFLnlLGvnpbjI24fPHqaEZM" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
-  }
-}</component>
-  <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/static" />
-    </key>
+  <component name="PropertiesComponent">
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="DefaultGoTemplateProperty" value="Go File" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="go.format.on.save.advertiser.fired" value="true" />
+    <property name="go.formatter.settings.were.checked" value="true" />
+    <property name="go.import.settings.migrated" value="true" />
+    <property name="go.modules.go.list.on.any.changes.was.set" value="true" />
+    <property name="go.sdk.automatically.set" value="true" />
+    <property name="go.watchers.conflict.with.on.save.actions.check.performed" value="true" />
+    <property name="last_opened_file_path" value="$USER_HOME$" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.folding" />
   </component>
   <component name="RunManager">
-    <configuration name="dev" type="js.build_tools.npm" nameIsGenerated="true">
-      <package-json value="$PROJECT_DIR$/package.json" />
-      <command value="run" />
-      <scripts>
-        <script value="dev" />
-      </scripts>
-      <node-interpreter value="/usr/local/bin/node" />
-      <envs />
+    <configuration default="true" type="GoApplicationRunConfiguration" factoryName="Go Application">
+      <module name="lmbop-go" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="FILE" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="go build lmbop-go" type="GoApplicationRunConfiguration" factoryName="Go Application" nameIsGenerated="true">
+      <module name="lmbop-go" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="PACKAGE" />
+      <package value="lmbop-go" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="GoTestRunConfiguration" factoryName="Go Test">
+      <module name="lmbop-go" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="DIRECTORY" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <framework value="gotest" />
       <method v="2" />
     </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
-  <component name="TaskManager">
-    <task active="true" id="Default" summary="Default task">
-      <changelist id="de0c4327-5b9c-4a5d-812d-695f886460e8" name="Changes" comment="" />
-      <created>1647708211481</created>
-      <option name="number" value="Default" />
-      <option name="presentableId" value="Default" />
-      <updated>1647708211481</updated>
-      <workItem from="1647708214839" duration="4999000" />
-      <workItem from="1647995761189" duration="8000" />
-      <workItem from="1653760959814" duration="155000" />
-      <workItem from="1653761131644" duration="5839000" />
-      <workItem from="1654194067456" duration="595000" />
-      <workItem from="1654612419537" duration="859000" />
-      <workItem from="1654785229437" duration="1245000" />
-      <workItem from="1654786912074" duration="2031000" />
-    </task>
-    <servers />
-  </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
-  <component name="XSLT-Support.FileAssociations.UIState">
-    <expand />
-    <select />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="original" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="original" />
+                </option>
+              </RecentGroup>
+            </list>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VgoProject">
+    <integration-enabled>true</integration-enabled>
   </component>
 </project>
