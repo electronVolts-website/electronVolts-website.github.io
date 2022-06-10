@@ -9,7 +9,7 @@
     import {mode, state} from '$lib/states.js'
     import AustralianToggleSwitch from '$lib/australianToggleSwitch.svelte'
     let embedURL = "https://twitter.com/electronVoltFTC"
-
+    
 </script>
 <div class="{$mode}">
     <div class="bg-white dark:bg-gray-600">
