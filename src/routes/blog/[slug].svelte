@@ -2,8 +2,8 @@
 
 <script context="module">
     
-export async function load({ page, fetch }) {
-    const slug = page.params.slug;
+export async function load({ params, fetch }) {
+    const slug = params.slug
     const blog = await fetch(`${slug}.json`).then((r) => r.json());
     //console.log(slug + "bruh")
     return {

@@ -1,24 +1,23 @@
 <script>
 
-// import { page } from "$app/stores";
+import { page } from "$app/stores";
 import {mode, state} from '$lib/states.js'
-
 
 let path
 
-
-
-// let pranavImg = "../../pranav.png"
-// $: {
-//     path = $page.path
-//     console.log($page.path)
-//     if($mode == ""){
-//         pranavImg = "../../pranav.png"
-//     }else{
-//         pranavImg = "../../pranavDarkMode.png"
-//     }
+let pranavImg = "../../pranav.png"
+$: {
+    path = $page.url.pathname
+    console.log($page.url.pathname)
+    if($mode === ""){
+        pranavImg = "../../pranav.png"
+    }else{
+        pranavImg = "../../pranavDarkMode.png"
+    }
     
-// }
+}
+
+
 
 let menuElement = [
     {name: 'Home', path: '/', icon: '<svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 flex-grow-0" viewBox="0 0 20 20" fill="currentColor"><path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z" /></svg>'},
@@ -28,15 +27,15 @@ let menuElement = [
 </script>
 <div class="bg-gray-100 h-screen">
     <div id="menu" class="flex-row sticky top-0 self-start items-start w-1\/3 space-y-3 mx-6 pt-4 {$state}">
-        <!-- <div class="">
+        <div class="">
             <img src={pranavImg} class="object-cover rounded-md " alt="team">
-        </div> -->
-        <!-- <div class="relative font-bold dark:text-gray-300">
+        </div>
+        <div class="relative font-bold dark:text-gray-300">
             Team 7393
-        </div> -->
+        </div>
         <div class=''>
             {#each menuElement as menu}
-                <a href={menu.path} class="transition  flex flex-row  relative items-center px-4 space-x-3 {(menu.path.startsWith("/blog") && path.startsWith("/blog")) || path == menu.path ? 'bg-lmao-yellow dark:text-gray-200 shadow-2xl' : 'text-gray-400'} ">
+                <a href={menu.path} class={(menu.path.startsWith("/blog") && path.startsWith("/blog")) || path === menu.path ? "transition flex flex-row  relative items-center px-4 space-x-3 bg-lmao-yellow dark:text-gray-200 shadow-2xl" : "transition flex flex-row  relative items-center px-4 space-x-3 text-gray-400"}>
                         {@html menu.icon}
 
                     <div class="font-bold w-full flex-grow text-2xl">
