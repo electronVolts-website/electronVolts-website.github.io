@@ -3,11 +3,16 @@
   <component name="ChangeListManager">
     <list default="true" id="1510765a-7462-4e86-b6c4-099590de53b5" name="Default Changelist" comment="Default Changelist">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/menuBar.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/menuBar.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/__layout.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/__layout.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/blog.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/blog.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/blogs.json.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/blogs.json.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/index.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/index.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/about.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/blog.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/blog.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/internal/immutable/assets/pages/__layout.svelte-f5625f17.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/internal/immutable/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/docs/internal/immutable/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/internal/immutable/pages/__layout.svelte-de38c77a.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/internal/immutable/pages/blog.svelte-c8191f76.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/internal/immutable/pages/index.svelte-50feaabf.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/internal/immutable/start-5f5b3e94.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/internal/version.json" beforeDir="false" afterPath="$PROJECT_DIR$/docs/internal/version.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,7 +53,22 @@
       <recent name="$PROJECT_DIR$/static" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Compound.build &amp; preview">
+    <configuration name="build &amp; preview" type="CompoundRunConfigurationType">
+      <toRun name="build" type="js.build_tools.npm" />
+      <toRun name="preview" type="js.build_tools.npm" />
+      <method v="2" />
+    </configuration>
+    <configuration name="build" type="js.build_tools.npm" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="build" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
     <configuration name="dev" type="js.build_tools.npm" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -59,6 +79,22 @@
       <envs />
       <method v="2" />
     </configuration>
+    <configuration name="preview" type="js.build_tools.npm" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="preview" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Compound.build &amp; preview" />
+      <item itemvalue="npm.preview" />
+      <item itemvalue="npm.dev" />
+      <item itemvalue="npm.build" />
+    </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
