@@ -16,8 +16,9 @@ let feeds = feedsjson.bruhFeed
 //console.log(feeds)
 </script>
 
+<!--TODO move the buttons to the menubar, hide the tweet stuff when its crammed (md)-->
 
-<div id="feed" class="flex flex-col mx-6 space-y-4 w-full">
+<div id="feed" class="flex flex-col px-4 sm:px-0 pt-4 sm:mx-6 space-y-2 md:space-y-4 w-full">
     {#each feeds as feed}
         <Card title={feed.title} description={feed.description} ytlink={feed.ytlink}/>
     {/each}

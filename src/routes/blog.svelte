@@ -19,7 +19,7 @@ export async function load({ fetch }) {
 }
 
 </script>
-<div class="w-full p-6 {$state}">
+<div class="w-full pt-4 px-2 sm:px-6 {$state}">
     <div class="flex flex-col space-y-3  w-full">
 
         {#each blogs as blog}
@@ -30,7 +30,7 @@ export async function load({ fetch }) {
                 </div>
                 <div class="flex flex-col">                
                     <div class="flex flex-col flex-grow">
-                        <a href="blog/{blog.path}" class="font-extrabold text-4xl">
+                        <a href="blog/{blog.path}" class="font-extrabold text-md sm:text-xl md:text-2xl lg:text-4xl">
                             {blog.title} 
                         </a>
                         <div class="text-gray-600 dark:text-gray-300 font-medium">
