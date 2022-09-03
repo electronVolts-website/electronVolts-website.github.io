@@ -1,7 +1,7 @@
 <script >
 
 import { page } from "$app/stores";
-import {mode, state} from "$lib/states.js";
+import {mode, state} from "$lib/states.ts";
 
 let path
 
@@ -38,7 +38,7 @@ let menuElement = [
 
 </script>
 <div class="bg-gray-100 h-auto sm:h-screen p-2 sm:p-0">
-    <div id="menu" class="flex flex-row sm:flex-col sticky top-0 self-start items-start w-1\/3 space-x-2 sm:space-y-3 sm:mx-6 sm:pt-4 {$state}">
+    <div id="menu" class="flex flex-row sm:flex-col sticky top-0 self-start items-start space-x-2 sm:space-y-3 sm:mx-6 sm:pt-4 {$state}">
         <img src={pranavImg} class="object-cover rounded-md w-10 sm:w-auto" alt="team">
         <div class=" font-bold dark:text-gray-300 w-10 sm:w-auto ">
             Team 7393

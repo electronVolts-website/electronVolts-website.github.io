@@ -1,6 +1,6 @@
 <script>
     //console.log(writable)
-    import {mode} from '$lib/states.js'
+    import {mode} from '$lib/states.ts'
     mode.set("") //dark will apply the dark class, none is no class
     $: console.log($mode + "bruh")
     let changeMode = () => ($mode == "")? mode.set("dark") : mode.set('')
