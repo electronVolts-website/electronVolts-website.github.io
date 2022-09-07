@@ -1,5 +1,3 @@
-import { writable } from "svelte/store";
+import { writable } from 'svelte/store';
 
-export const mode = writable('')
-
-export const state = writable('')
+export const mode = writable('');

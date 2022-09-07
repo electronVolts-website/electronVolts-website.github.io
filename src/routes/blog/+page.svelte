@@ -1,12 +1,8 @@
 <script>
-
-    import {state} from '$lib/states'
-
     export let data
-    console.log("data")
 </script>
 
-<div class="w-full pt-4 px-2 sm:px-6 {$state}">
+<div class="w-full pt-4 px-2 sm:px-6">
     <div class="flex flex-col space-y-3  w-full">
         {#each data.blogData as blog}
             <a href="blog/{blog.path}" id="blogCard"

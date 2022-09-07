@@ -6,10 +6,11 @@
     import MenuBar from '$lib/menuBar.svelte'
     import {mode} from '$lib/states'
     import RightSideBar from "$lib/RightSideBar.svelte";
+
 </script>
 
 <div class="{$mode}">
-    <div class="bg-white dark:bg-gray-600">
+    <div class="bg-white dark:bg-gray-700">
         <div class="flex flex-col sm:flex-row sm:min-h-screen">
             <MenuBar/>
             <slot/>

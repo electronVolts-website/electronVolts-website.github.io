@@ -7,11 +7,8 @@ import rehypeHighlight from 'rehype-highlight';
 import rehypeFigure from 'rehype-figure';
 
 export const processMarkdown = async (rawJSON: any) => {
-	console.log('started processing markdown');
-
 	const parser = unified().use(remarkParse).use(remarkGfm);
 	const tree = parser.parse(rawJSON.body);
-	console.log('parse defined');
 	const processor = unified()
 		.use(remark2rehype)
 		.use(rehypeFigure)

@@ -14,10 +14,7 @@ const config = {
 			assets: 'docs',
 			fallback: null
 		}),
-		appDir: 'internal',
-		prerender: {
-			default: true
-		},
+		appDir: 'internal'
 	}
 };
 

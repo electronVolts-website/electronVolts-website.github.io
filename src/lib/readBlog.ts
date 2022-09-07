@@ -18,8 +18,6 @@ export const readBlog = async (fileName: string): Promise<BlogMeta> => {
 
 	const metadataFrontMatter: FrontMatterResult<any> = fm(blog);
 
-	//console.log(metadataFrontMatter)
-
 	return {
 		title: metadataFrontMatter?.attributes?.title,
 		desc: metadataFrontMatter?.attributes?.description.replace('\n', '<br>'),

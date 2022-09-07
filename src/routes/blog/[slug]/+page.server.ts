@@ -7,7 +7,6 @@ import type { PageServerLoad } from './$types';
 
 export const load: PageServerLoad = async ({ params }) => {
 	const { slug } = params;
-	console.log('the slug is' + slug);
 	let rawJSON = await readBlog(slug);
 	rawJSON = await processMarkdown(rawJSON);
 

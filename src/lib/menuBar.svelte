@@ -1,14 +1,13 @@
-<script >
-
+<script lang="ts">
 import { page } from "$app/stores";
-import {mode, state} from "$lib/states.ts";
+import {mode} from "$lib/states";
+import DarkmodeToggleSwitch from "./DarkmodeToggleSwitch.svelte";
 
 let path
-
 let pranavImg = "../../pranav.png"
+
 $: {
     path = $page.url.pathname
-    console.log($page.url.pathname)
     if($mode === ""){
         pranavImg = "../../pranav.png"
     }else{
@@ -18,14 +17,13 @@ $: {
 }
 //a root path stats with /, so we its gonna have problems matching, therefore substring it by 1
 //menuPath is the root path for each page, while paths could be child paths (omg branav's fav??)
-let isSameOrContainPath = (menuPath, path) => {
+const isSameOrContainPath = (menuPath: string, path: string ): boolean => {
     menuPath = menuPath.substring(1)
     path = path.substring(1)
     if (menuPath === "" && path !== "") {
         return false
     }
 
-    console.log(menuPath + " sussy among us " + path)
     return path.startsWith(menuPath)
     //root path would work for the first one, but not for the second one
 }
@@ -37,15 +35,15 @@ let menuElement = [
 ]
 
 </script>
-<div class="bg-gray-100 h-auto sm:h-screen p-2 sm:p-0">
-    <div id="menu" class="flex flex-row sm:flex-col sticky top-0 self-start items-start space-x-2 sm:space-y-3 sm:mx-6 sm:pt-4 {$state}">
+<div class="bg-gray-100 dark:bg-gray-800 sm:h-screen p-2 sm:p-0 sticky top-0">
+    <div id="menu" class="flex flex-row sm:h-full sm:flex-col self-start space-x-2 sm:space-y-3 sm:mx-6 sm:pt-4">
+
         <img src={pranavImg} class="object-cover rounded-md w-10 sm:w-auto" alt="team">
-        <div class=" font-bold dark:text-gray-300 w-10 sm:w-auto ">
-            Team 7393
-        </div>
+        <div class="font-bold w-10 sm:w-auto text-black dark:text-white my-auto">Team 7393</div>
+
         <div class="flex sm:flex-col flex-row my-auto">
             {#each menuElement as menu}
-                <a href={menu.path} class="transition flex flex-row items-center px-2 sm:px-4 space-x-3 {isSameOrContainPath(menu.path, path) || path === menu.path ? 'bg-lmao-yellow dark:text-gray-200 shadow-2xl rounded-md' : 'text-gray-400 rounded-md'}">
+                <a href={menu.path} class="transition flex flex-row items-center px-2 sm:px-4 space-x-3 {isSameOrContainPath(menu.path, path) || path === menu.path ? 'bg-lmao-yellow dark:text-gray-800 shadow-2xl rounded-md' : 'text-gray-400 rounded-md'}">
                         {@html menu.icon}
                     <div class="font-bold w-full flex-grow p-1 sm:p-0 text-xl sm:text-2xl {isSameOrContainPath(menu.path, path) || path === menu.path ? '' : 'hidden sm:block'}">
                         {menu.name}
@@ -56,6 +54,15 @@ let menuElement = [
                 </a>
             {/each}
         </div>
+
+        <div class=" w-full sm:w-none sm:h-full"></div>
+        <!--mt-auto makes the gap here-->
+        <div class="flex flex-row space-x-2 my-auto sm:pb-5">
+            <DarkmodeToggleSwitch></DarkmodeToggleSwitch>
+            <p class="dark:text-gray-200 font-bold my-auto hidden sm:block">Dark Mode</p>
+        </div>
+
+
     </div>
 </div>
 

@@ -1,5 +1,5 @@
 {
-	"name": "my-app",
+	"name": "branav-app",
 	"version": "0.0.1",
 	"private": true,
 	"scripts": {
@@ -34,7 +34,7 @@
 		"tailwindcss": "^3.1.8",
 		"tslib": "^2.3.1",
 		"typescript": "^4.7.4",
-		"vite": "^3.0.4"
+		"vite": "^3.1.0-beta.1"
 	},
 	"dependencies": {
 		"@fontsource/fira-mono": "^4.5.0",

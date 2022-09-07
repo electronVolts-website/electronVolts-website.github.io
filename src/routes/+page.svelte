@@ -8,16 +8,14 @@
 </svelte:head>
 
 <script>
-    import Card from '../lib/card.svelte';
-
+    import VideoCard from '$lib/VideoCard.svelte';
     export let data
-    console.log(data.data)
 </script>
 
 <!--TODO move the buttons to the menubar, hide the tweet stuff when its crammed (md)-->
 
 <div id="feed" class="flex flex-col px-4 sm:px-0 pt-4 sm:mx-6 space-y-2 md:space-y-4 w-full">
     {#each data.data.videos as feed}
-        <Card title={feed.title} description={feed.description} ytlink={feed.url} thumbnail={feed.thumbnail}/>
+        <VideoCard title={feed.title} description={feed.description} ytlink={feed.url} thumbnail={feed.thumbnail}/>
     {/each}
 </div>
