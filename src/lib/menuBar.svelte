@@ -1,6 +1,6 @@
 <script lang="ts">
 import { page } from "$app/stores";
-import {mode} from "$lib/states";
+import { mode } from "$lib/states";
 import DarkmodeToggleSwitch from "./DarkmodeToggleSwitch.svelte";
 
 let path
@@ -43,9 +43,9 @@ let menuElement = [
 
         <div class="flex sm:flex-col flex-row my-auto">
             {#each menuElement as menu}
-                <a href={menu.path} class="transition flex flex-row items-center px-2 sm:px-4 space-x-3 {isSameOrContainPath(menu.path, path) || path === menu.path ? 'bg-lmao-yellow dark:text-gray-800 shadow-2xl rounded-md' : 'text-gray-400 rounded-md'}">
+                <a href={menu.path} class="transition flex flex-row items-center px-2 sm:px-4 space-x-2 {isSameOrContainPath(menu.path, path) || path === menu.path ? 'bg-lmao-yellow dark:text-gray-800 shadow-2xl rounded-md' : 'text-gray-400 rounded-md'}">
                         {@html menu.icon}
-                    <div class="font-bold w-full flex-grow p-1 sm:p-0 text-xl sm:text-2xl {isSameOrContainPath(menu.path, path) || path === menu.path ? '' : 'hidden sm:block'}">
+                    <div class="font-bold w-full flex-grow py-1 sm:p-0 text-xl sm:text-2xl {isSameOrContainPath(menu.path, path) || path === menu.path ? '' : 'hidden sm:block'}">
                         {menu.name}
                     </div>
                     <!-- <div class="bg-yellow-300 dark:bg-yellow-200 rounded-full w-3 h-3 top-0 right-0 -mr-1 -mt-1 absolute {(menu.path.startsWith("/blog") && path.startsWith("/blog")) || path == menu.path ? '' : 'hidden'} "> -->

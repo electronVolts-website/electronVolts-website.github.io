@@ -2,34 +2,47 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1510765a-7462-4e86-b6c4-099590de53b5" name="Default Changelist" comment="Default Changelist">
-      <change afterPath="$PROJECT_DIR$/archive/blogs/about.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/routes/+layout.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TODO.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/profiles/bric.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/about.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/about/__data.js" beforeDir="false" afterPath="$PROJECT_DIR$/docs/about/__data.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/blog.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/blog.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/blog/__data.js" beforeDir="false" afterPath="$PROJECT_DIR$/docs/blog/__data.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/blog/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/blog/about.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/blog/about/__data.js" beforeDir="false" afterPath="$PROJECT_DIR$/docs/blog/about/__data.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/blog/bruhmoment.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/blog/bruhmoment/__data.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/blog/pranav.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/blog/pranav/__data.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/blog/robot.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/blog/robot/__data.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/internal/immutable/assets/_layout-282b0608.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/internal/immutable/chunks/0-ee1139fe.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/internal/immutable/chunks/1-4bbecce2.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/internal/immutable/chunks/2-8fbaaa2c.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/internal/immutable/chunks/3-2a1042b5.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/internal/immutable/chunks/singletons-a648d68c.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/internal/immutable/chunks/stores-ebd636f3.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/internal/immutable/components/error.svelte-d27d6cc5.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/internal/immutable/components/pages/_layout.svelte-24dd40de.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/internal/immutable/components/pages/_page.svelte-5fbd1567.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/internal/immutable/components/pages/about/_page.svelte-2474a4f5.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/internal/immutable/start-5a51e900.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/internal/version.json" beforeDir="false" afterPath="$PROJECT_DIR$/docs/internal/version.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/vite-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/docs/vite-manifest.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/blog/bruhmoment.md" beforeDir="false" afterPath="$PROJECT_DIR$/archive/blogs/bruhmoment.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/blog/pranav.md" beforeDir="false" afterPath="$PROJECT_DIR$/archive/blogs/pranav.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/blog/robot.md" beforeDir="false" afterPath="$PROJECT_DIR$/archive/blogs/robot.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/RightSideBar.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/RightSideBar.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/australianToggleSwitch.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/archive/australianToggleSwitch.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/card.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/VideoCard.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/markdown.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/markdown.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/blog/about.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/blog/about.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/lib/menuBar.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/menuBar.svelte" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/lib/profileCard.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/profileCard.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/readBlog.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/readBlog.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/states.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/states.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/toggleSwitch.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/DarkmodeToggleSwitch.svelte" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/routes/+layout.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/+layout.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/+page.server.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/+page.server.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/+page.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/+page.svelte" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/routes/about/+page.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/about/+page.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/blog/+page.server.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/blog/+page.server.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/blog/+page.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/blog/+page.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/blog/+page.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/blog/+page.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/blog/[slug]/+page.server.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/blog/[slug]/+page.server.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/blog/[slug]/+page.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/blog/[slug]/+page.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/svelte.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/svelte.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tailwind.config.cjs" beforeDir="false" afterPath="$PROJECT_DIR$/tailwind.config.cjs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,25 +80,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/Users/vincent/Documents/Github/electronVolts-website.github.io/archive/blogs",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.standard": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.standard": "",
-    "nodejs_package_manager_path": "npm",
-    "prettierjs.PrettierConfiguration.Package": "/Users/vincent/Documents/Github/electronVolts-website.github.io/node_modules/prettier",
-    "settings.editor.selected.configurable": "settings.javascript.linters.eslint",
-    "ts.external.directory.path": "/Users/vincent/Documents/Github/electronVolts-website.github.io/node_modules/typescript/lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;ASKED_MARK_IGNORED_FILES_AS_EXCLUDED&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/vincent/Documents/Github/electronVolts-website.github.io/static/profiles&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;/Users/vincent/Documents/Github/electronVolts-website.github.io/node_modules/prettier&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/Users/vincent/Documents/Github/electronVolts-website.github.io/node_modules/typescript/lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/static/profiles" />
       <recent name="$PROJECT_DIR$/archive/blogs" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -163,6 +177,11 @@
       <workItem from="1661797014123" duration="19201000" />
       <workItem from="1662042074334" duration="14747000" />
       <workItem from="1662183134479" duration="6850000" />
+      <workItem from="1662556833086" duration="4344000" />
+      <workItem from="1663345498593" duration="658000" />
+      <workItem from="1663459979116" duration="587000" />
+      <workItem from="1664282413410" duration="7690000" />
+      <workItem from="1664456989899" duration="2366000" />
     </task>
     <servers />
   </component>
