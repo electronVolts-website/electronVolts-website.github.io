@@ -2,47 +2,36 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1510765a-7462-4e86-b6c4-099590de53b5" name="Default Changelist" comment="Default Changelist">
-      <change afterPath="$PROJECT_DIR$/TODO.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/profiles/bric.jpeg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/EVLogo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/EVLogoYellow.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/EVLogoYellowBorder.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/CNAME" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/about.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/about/__data.js" beforeDir="false" afterPath="$PROJECT_DIR$/docs/about/__data.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/blog.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/blog.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/blog/__data.js" beforeDir="false" afterPath="$PROJECT_DIR$/docs/blog/__data.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/blog/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/blog/about.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/blog/about/__data.js" beforeDir="false" afterPath="$PROJECT_DIR$/docs/blog/about/__data.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/blog/bruhmoment.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/blog/bruhmoment/__data.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/blog/pranav.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/blog/pranav/__data.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/blog/robot.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/blog/robot/__data.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/internal/immutable/assets/_layout-282b0608.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/internal/immutable/chunks/0-ee1139fe.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/internal/immutable/chunks/1-4bbecce2.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/internal/immutable/chunks/2-8fbaaa2c.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/internal/immutable/chunks/3-2a1042b5.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/internal/immutable/chunks/singletons-a648d68c.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/internal/immutable/chunks/stores-ebd636f3.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/internal/immutable/components/error.svelte-d27d6cc5.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/internal/immutable/components/pages/_layout.svelte-24dd40de.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/internal/immutable/components/pages/_page.svelte-5fbd1567.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/internal/immutable/components/pages/about/_page.svelte-2474a4f5.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/internal/immutable/start-5a51e900.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/internal/immutable/assets/_layout-3c1ef643.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/internal/immutable/chunks/0-821de3ce.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/internal/immutable/chunks/1-4490f34c.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/internal/immutable/chunks/2-ff3230f6.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/internal/immutable/chunks/3-6e17b860.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/internal/immutable/chunks/singletons-9288b8b3.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/internal/immutable/chunks/stores-1c4982be.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/internal/immutable/components/error.svelte-3aae01f3.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/internal/immutable/components/pages/_layout.svelte-8b9ec611.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/internal/immutable/components/pages/_page.svelte-e9b2b125.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/internal/immutable/components/pages/about/_page.svelte-b356270c.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/internal/immutable/start-c39efced.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/internal/version.json" beforeDir="false" afterPath="$PROJECT_DIR$/docs/internal/version.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/vite-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/docs/vite-manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/blog/about.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/blog/about.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/VideoCard.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/VideoCard.svelte" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/lib/menuBar.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/menuBar.svelte" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/lib/profileCard.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/profileCard.svelte" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/routes/+layout.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/+layout.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/about/+page.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/about/+page.svelte" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tailwind.config.cjs" beforeDir="false" afterPath="$PROJECT_DIR$/tailwind.config.cjs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/+page.server.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/+page.server.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/+page.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/+page.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/blog/[slug]/+page.server.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/blog/[slug]/+page.server.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,11 +92,11 @@
       <recent name="$PROJECT_DIR$/archive/blogs" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/static" />
       <recent name="$PROJECT_DIR$/archive" />
       <recent name="$PROJECT_DIR$/src/staticFiles" />
       <recent name="$PROJECT_DIR$/src/routes/blog" />
       <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/my-app" />
     </key>
   </component>
   <component name="RunManager" selected="Compound.build &amp; preview">
@@ -181,7 +170,7 @@
       <workItem from="1663345498593" duration="658000" />
       <workItem from="1663459979116" duration="587000" />
       <workItem from="1664282413410" duration="7690000" />
-      <workItem from="1664456989899" duration="2366000" />
+      <workItem from="1664456989899" duration="9226000" />
     </task>
     <servers />
   </component>

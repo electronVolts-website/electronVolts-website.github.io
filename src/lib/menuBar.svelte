@@ -4,7 +4,11 @@ import { mode } from "$lib/states";
 import DarkmodeToggleSwitch from "./DarkmodeToggleSwitch.svelte";
 
 let path
+let logo = "../../EVLogo.png"
 let pranavImg = "../../pranav.png"
+
+$: logo = $mode? "../../EVLogo.png" : "../../EVLogo.png"
+// you cant just reference it directly, because the static renderer will mistake it as a path
 
 $: {
     path = $page.url.pathname
@@ -38,7 +42,7 @@ let menuElement = [
 <div class="bg-gray-100 dark:bg-gray-800 sm:h-screen p-2 sm:p-0 sticky top-0">
     <div id="menu" class="flex flex-row sm:h-full sm:flex-col self-start space-x-2 sm:space-y-3 sm:mx-6 sm:pt-4">
 
-        <img src={pranavImg} class="object-cover rounded-md w-10 sm:w-auto" alt="team">
+        <img src={logo} class=" rounded-md w-10 sm:w-40" alt="team">
         <div class="font-bold w-10 sm:w-auto text-black dark:text-white my-auto">Team 7393</div>
 
         <div class="flex sm:flex-col flex-row my-auto">
@@ -48,20 +52,17 @@ let menuElement = [
                     <div class="font-bold w-full flex-grow py-1 sm:p-0 text-xl sm:text-2xl {isSameOrContainPath(menu.path, path) || path === menu.path ? '' : 'hidden sm:block'}">
                         {menu.name}
                     </div>
-                    <!-- <div class="bg-yellow-300 dark:bg-yellow-200 rounded-full w-3 h-3 top-0 right-0 -mr-1 -mt-1 absolute {(menu.path.startsWith("/blog") && path.startsWith("/blog")) || path == menu.path ? '' : 'hidden'} "> -->
-
-                    <!-- </div> -->
                 </a>
             {/each}
         </div>
 
-        <div class=" w-full sm:w-none sm:h-full"></div>
-        <!--mt-auto makes the gap here-->
+        <!-- this thing doesnt hide on mobile, becuz it only affects iphone 5s and smaller -->
+        <div class="w-full sm:w-none sm:h-full"></div>
+
         <div class="flex flex-row space-x-2 my-auto sm:pb-5">
             <DarkmodeToggleSwitch></DarkmodeToggleSwitch>
             <p class="dark:text-gray-200 font-bold my-auto hidden sm:block">Dark Mode</p>
         </div>
-
 
     </div>
 </div>

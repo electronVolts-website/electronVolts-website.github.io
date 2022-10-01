@@ -4,18 +4,24 @@
 		<meta charset="utf-8" />
 		<link rel="icon" href="./favicon.png" />
 		<meta name="viewport" content="width=device-width" />
-		<meta http-equiv="content-security-policy" content=""><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/styles/github-dark.min.css" data-svelte="svelte-1bdpeuq">
-	<link href="./internal/immutable/assets/_layout-3c1ef643.css" rel="stylesheet">
-	<link rel="modulepreload" href="./internal/immutable/start-c39efced.js">
+		<meta http-equiv="content-security-policy" content=""><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/styles/github-dark.min.css" data-svelte="svelte-1u4qi2y"><style data-svelte="svelte-1u4qi2y">body {
+                background-color: white;
+            }
+        </style>
+    //uhm the best workaround until we have svelte:head class=&quot;something&quot;
+    //this gives you true background colors, especially on mobile
+
+	<link href="./internal/immutable/assets/_layout-4db30a9e.css" rel="stylesheet">
+	<link rel="modulepreload" href="./internal/immutable/start-0b501d6b.js">
 	<link rel="modulepreload" href="./internal/immutable/chunks/index-ced44c5b.js">
-	<link rel="modulepreload" href="./internal/immutable/chunks/singletons-9288b8b3.js">
+	<link rel="modulepreload" href="./internal/immutable/chunks/singletons-91fbf34c.js">
 	<link rel="modulepreload" href="./internal/immutable/chunks/index-81c42cd7.js">
-	<link rel="modulepreload" href="./internal/immutable/components/pages/_layout.svelte-8b9ec611.js">
-	<link rel="modulepreload" href="./internal/immutable/chunks/stores-1c4982be.js">
+	<link rel="modulepreload" href="./internal/immutable/components/pages/_layout.svelte-e8caaec4.js">
+	<link rel="modulepreload" href="./internal/immutable/chunks/stores-6078e82e.js">
 	<link rel="modulepreload" href="./internal/immutable/chunks/states-925e5fc4.js">
 	<link rel="modulepreload" href="./internal/immutable/modules/pages/_layout.ts-ccf77788.js">
 	<link rel="modulepreload" href="./internal/immutable/chunks/_layout-c2405b24.js">
-	<link rel="modulepreload" href="./internal/immutable/components/pages/about/_page.svelte-b356270c.js">
+	<link rel="modulepreload" href="./internal/immutable/components/pages/about/_page.svelte-250debc0.js">
 	<link rel="modulepreload" href="./internal/immutable/modules/pages/about/_page.ts-6d47b579.js">
 	<link rel="modulepreload" href="./internal/immutable/chunks/_page-6cf72b81.js">
 	</head>
@@ -27,40 +33,33 @@
 
 
 
-<div class="bg-white dark:bg-gray-700 flex flex-col w-auto sm:flex-row sm:min-h-screen "><div class="bg-gray-100 dark:bg-gray-800 sm:h-screen p-2 sm:p-0 sticky top-0"><div id="menu" class="flex flex-row sm:h-full sm:flex-col self-start space-x-2 sm:space-y-3 sm:mx-6 sm:pt-4"><img src="../../pranav.png" class="object-cover rounded-md w-10 sm:w-auto" alt="team">
+
+<div class=" flex flex-col w-auto h-full sm:flex-row sm:min-h-screen"><div class="bg-gray-100 dark:bg-gray-800 sm:h-screen p-2 sm:p-0 sticky top-0"><div id="menu" class="flex flex-row sm:h-full sm:flex-col self-start space-x-2 sm:space-y-3 sm:mx-6 sm:pt-4"><img src="../../EVLogo.png" class="rounded-md w-10 sm:w-40" alt="team">
         <div class="font-bold w-10 sm:w-auto text-black dark:text-white my-auto">Team 7393</div>
 
         <div class="flex sm:flex-col flex-row my-auto"><a href="/" class="transition flex flex-row items-center px-2 sm:px-4 space-x-2 text-gray-400 rounded-md"><!-- HTML_TAG_START --><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 sm:h-10 sm:w-10 " viewBox="0 0 20 20" fill="currentColor"><path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z" /></svg><!-- HTML_TAG_END -->
                     <div class="font-bold w-full flex-grow py-1 sm:p-0 text-xl sm:text-2xl hidden sm:block">Home</div>
-                    
-
-                    
                 </a><a href="/blog" class="transition flex flex-row items-center px-2 sm:px-4 space-x-2 text-gray-400 rounded-md"><!-- HTML_TAG_START --><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 sm:h-10 sm:w-10 " fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" /></svg><!-- HTML_TAG_END -->
                     <div class="font-bold w-full flex-grow py-1 sm:p-0 text-xl sm:text-2xl hidden sm:block">Blog</div>
-                    
-
-                    
                 </a><a href="/about" class="transition flex flex-row items-center px-2 sm:px-4 space-x-2 bg-lmao-yellow dark:text-gray-800 shadow-2xl rounded-md"><!-- HTML_TAG_START --><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 sm:h-10 sm:w-10 flex-grow-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg><!-- HTML_TAG_END -->
                     <div class="font-bold w-full flex-grow py-1 sm:p-0 text-xl sm:text-2xl ">About</div>
-                    
-
-                    
                 </a></div>
 
-        <div class="w-full sm:w-none sm:h-full"></div>
         
+        <div class="w-full sm:w-none sm:h-full"></div>
+
         <div class="flex flex-row space-x-2 my-auto sm:pb-5"><div class="relative"><div class="block bg-gray-300 dark:bg-gray-600 w-14 h-8 rounded-full"></div>
     
     <div class="dot absolute left-1 top-1 bg-white w-6 h-6 rounded-full transition"></div></div>
             <p class="dark:text-gray-200 font-bold my-auto hidden sm:block">Dark Mode</p></div></div></div>
-    <div class="flex flex-col overflow-auto pt-4 px-2 sm:px-6 m-4"><div class="pt-4"><div class="rounded-xl bg-gray-200 dark:bg-gray-600 shadow-lg p-3 mb-4"><div class="font-bold text-3xl ml-2">Meet The Team
+    <div class="flex flex-col overflow-auto pt-4 px-2 sm:px-6 m-4"><div class="pt-4"><div class="rounded-xl bg-gray-200 dark:bg-gray-600 shadow-lg p-3 mb-4"><div class="font-bold text-3xl ml-2 dark:text-gray-100">Meet The Team
     </div></div>
 
 <div class="flex items-start overflow-x-auto space-x-2"><div><div class="rounded-xl overflow-hidden bg-gray-200 dark:bg-gray-600 shadow-md mb-4 w-32"><img src="../../pranav.png" class="rounded-full object-cover object-center aspect-1 p-4 " alt="pranav go brrr">
-                <div class="font-bold dark:text-gray-200 grid place-items-center bg-gray-300 p-1">Pranav
+                <div class="font-bold dark:text-gray-200 dark:bg-gray-500 grid place-items-center bg-gray-300 p-1">Pranav
                 </div></div>
         </div><div><div class="rounded-xl overflow-hidden bg-gray-200 dark:bg-gray-600 shadow-md mb-4 w-32"><img src="../../profiles/bric.jpeg" class="rounded-full object-cover object-center aspect-1 p-4 " alt="pranav go brrr">
-                <div class="font-bold dark:text-gray-200 grid place-items-center bg-gray-300 p-1">Bric
+                <div class="font-bold dark:text-gray-200 dark:bg-gray-500 grid place-items-center bg-gray-300 p-1">Bric
                 </div></div>
         </div></div></div>
 
@@ -82,8 +81,8 @@
 </div>
 
 
-		<script type="module" data-sveltekit-hydrate="en7yjw">
-		import { start } from "./internal/immutable/start-c39efced.js";
+		<script type="module" data-sveltekit-hydrate="1mud0d9">
+		import { start } from "./internal/immutable/start-0b501d6b.js";
 
 		start({
 			env: {},
@@ -97,7 +96,7 @@
 				errors: null
 			},
 			paths: {"base":"","assets":""},
-			target: document.querySelector('[data-sveltekit-hydrate="en7yjw"]').parentNode,
+			target: document.querySelector('[data-sveltekit-hydrate="1mud0d9"]').parentNode,
 			trailing_slash: "never"
 		});
 	</script>

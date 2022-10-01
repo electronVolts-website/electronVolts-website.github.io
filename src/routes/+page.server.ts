@@ -21,6 +21,5 @@ export const load: PageServerLoad = async () => {
 		};
 		videos.push(video);
 	}
-	console.log(videos);
 	return { videos: videos };
 };
