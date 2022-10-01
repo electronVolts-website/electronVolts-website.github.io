@@ -14,8 +14,8 @@
             }
         </style>
     {/if}
-    //uhm the best workaround until we have svelte:head class="something"
-    //this gives you true background colors, especially on mobile
+<!--    uhm the best workaround until we have svelte:head class="something"-->
+<!--    this gives you true background colors, especially on mobile-->
 </svelte:head>
 
 <script>
