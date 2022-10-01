@@ -3,8 +3,8 @@ import { page } from "$app/stores";
 import { mode } from "$lib/states";
 import DarkmodeToggleSwitch from "./DarkmodeToggleSwitch.svelte";
 
-let path
-let logo = "../../EVLogo.png"
+let path: string
+let logo: string
 let pranavImg = "../../pranav.png"
 
 $: logo = $mode? "../../EVLogoYellowBorder.png" : "../../EVLogo.png"
