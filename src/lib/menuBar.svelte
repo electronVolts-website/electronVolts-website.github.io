@@ -7,7 +7,7 @@ let path
 let logo = "../../EVLogo.png"
 let pranavImg = "../../pranav.png"
 
-$: logo = $mode? "../../EVLogo.png" : "../../EVLogo.png"
+$: logo = $mode? "../../EVLogoYellowBorder.png" : "../../EVLogo.png"
 // you cant just reference it directly, because the static renderer will mistake it as a path
 
 $: {
