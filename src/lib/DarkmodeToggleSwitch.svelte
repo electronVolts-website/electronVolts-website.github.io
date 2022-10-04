@@ -23,7 +23,7 @@
 </script>
 
 <div class="relative">    
-    <div class="block bg-gray-300 dark:bg-gray-600 w-14 h-8 rounded-full" on:click="{changeMode}"></div>
+    <div class="block bg-gray-300 dark:bg-gray-600 w-7 h-4 sm:w-14 sm:h-8 rounded-full" on:click="{changeMode}"></div>
     
-    <div class=" dot absolute left-1 top-1 bg-white w-6 h-6 rounded-full transition" class:translate-x-full="{$mode === 'dark'}" on:click="{changeMode}"></div>
+    <div class=" dot absolute left-0.5 top-0.5 sm:left-1 sm:top-1 bg-white w-3 h-3 sm:w-6 sm:h-6 rounded-full transition" class:translate-x-full="{$mode === 'dark'}" on:click="{changeMode}"></div>
 </div>

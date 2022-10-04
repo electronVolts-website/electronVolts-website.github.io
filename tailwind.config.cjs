@@ -6,7 +6,10 @@ module.exports = {
     ],
   darkMode: 'class', 
   theme: {
-    extend: {
+    screens: {
+      '5s': '330px',
+    },
+      extend: {
       typography(theme) {
         return {
           dark: {

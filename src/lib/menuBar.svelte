@@ -56,8 +56,8 @@ let menuElement = [
             {/each}
         </div>
 
-        <!-- this thing doesnt hide on mobile, becuz it only affects iphone 5s and smaller -->
-        <div class="w-full sm:w-none sm:h-full"></div>
+        <!-- when the iphone 5s -->
+        <div class="w-full sm:w-none sm:h-full hidden 5s:block"></div>
 
         <div class="flex flex-row space-x-2 my-auto sm:pb-5">
             <DarkmodeToggleSwitch></DarkmodeToggleSwitch>
