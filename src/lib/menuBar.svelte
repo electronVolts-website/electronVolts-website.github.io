@@ -47,7 +47,7 @@ let menuElement = [
 
         <div class="flex sm:flex-col flex-row my-auto">
             {#each menuElement as menu}
-                <a href={menu.path} class="transition flex flex-row items-center px-2 sm:px-4 space-x-2 {isSameOrContainPath(menu.path, path) || path === menu.path ? 'bg-lmao-yellow dark:text-gray-800 shadow-2xl rounded-md' : 'text-gray-400 rounded-md'}">
+                <a href={menu.path} class="transition flex flex-row items-center px-2 sm:px-4 space-x-1 5s:space-x-2 {isSameOrContainPath(menu.path, path) || path === menu.path ? 'bg-lmao-yellow dark:text-gray-800 shadow-2xl rounded-md' : 'text-gray-400 rounded-md'}">
                         {@html menu.icon}
                     <div class="font-bold w-full flex-grow py-1 sm:p-0 text-xl sm:text-2xl {isSameOrContainPath(menu.path, path) || path === menu.path ? '' : 'hidden sm:block'}">
                         {menu.name}
@@ -59,7 +59,7 @@ let menuElement = [
         <!-- when the iphone 5s -->
         <div class="w-full sm:w-none sm:h-full hidden 5s:block"></div>
 
-        <div class="flex flex-row space-x-2 my-auto sm:pb-5">
+        <div class="flex flex-row space-x-2 my-auto sm:pb-5 transform-gpu rotate-90 5s:rotate-0">
             <DarkmodeToggleSwitch></DarkmodeToggleSwitch>
             <p class="dark:text-gray-200 font-bold my-auto hidden sm:block">Dark Mode</p>
         </div>
