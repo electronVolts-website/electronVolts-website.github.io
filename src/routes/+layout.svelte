@@ -4,7 +4,7 @@
     {#if !$mode}
         <style>
             body {
-                background-color: white;
+                background-color: #f3f4f6;
             }
         </style>
     {:else}
