@@ -7,7 +7,7 @@ thumbnail: static/pranav.png
 
 ## 👋 Hello From Team 7393
 
-We are a veteran FTC team that has been around for 9 years, based in Ashton Maryland. This team was founded in 2013 and has been competing in the FIRST Tech Challenge for 8 years. Our members are high schoolers who are excited about the upcoming season. Our amazing coaches are Jon Vandegriff and Tom Capon who have been diligently supporting us from the beginning.
+We are a veteran FTC team that has been around for 9 years, based in Ashton Maryland. This team was founded in 2013 and has been competing in the FIRST Tech Challenge for 8 years. Our members are all highschoolers, excited about the upcoming season. Jon Vandegriff and Tom Capon are our amazing coaches who have been diligently supporting us from the beginning.
 
 ## 📓 Contacts
 You can reach us at:
