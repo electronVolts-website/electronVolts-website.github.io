@@ -6,19 +6,18 @@ thumbnail: static/pranav.png
 ---
 
 ## 👋 Hello From Team 7393
-### bruhnav is sus
-We are a team of people enthusiastic about robotics located at ashton maryland.
 
-This team is founded in 2013, and we have been competing in the FIRST Robotics Competition for 8 years.
+We are a veteran FTC team that has been around for 9 years, based in Ashton Maryland. This team was founded in 2013 and has been competing in the FIRST Tech Challenge for 8 years. Our members are high schoolers who are excited about the upcoming season. Our amazing coaches are Jon Vandegriff and Tom Capon who have been diligently supporting us from the beginning.
 
 ## 📓 Contacts
+You can reach us at:
 
-You can contact us at [electronvolts7393@gmail.com](mailto:electronvolts7393@gmail.com)
+Team Email: [electronvolts7393@gmail.com](mailto:electronvolts7393@gmail.com)
 
-You can contact Jon Vandegriff (a coach) at [jonvandegriff@gmail.com](mailto:jonvandegriff@gmail.com)
+Coach's Email: [jonvandegriff@gmail.com](mailto:jonvandegriff@gmail.com)
 
-You can follow our twitter at [@electronVoltFTC](https://twitter.com/electronVoltFTC).
+Twitter: [@electronVoltFTC](https://twitter.com/electronVoltFTC)
 
-You can watch our streams at [electronvolts7393](https://www.twitch.tv/electronvolts7393).
+Twitch Streams: [electronVolts7393](https://twitter.com/electronVoltFTC)
 
-You can watch our YouTube videos at [electronVolts 7393](https://www.youtube.com/channel/UCjHhFVW1xlF7UZBzC92veZg).
+Youtube: [electronVolts 7393](https://www.youtube.com/channel/UCjHhFVW1xlF7UZBzC92veZg)
