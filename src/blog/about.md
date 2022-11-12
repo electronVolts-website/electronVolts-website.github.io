@@ -6,7 +6,7 @@ thumbnail: static/pranav.png
 ---
 
 ## 👋 Hello From Team 7393
-
+### bruhnav is sus
 We are a team of people enthusiastic about robotics located at ashton maryland.
 
 This team is founded in 2013, and we have been competing in the FIRST Robotics Competition for 8 years.
