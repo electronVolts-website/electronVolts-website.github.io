@@ -1,10 +1,18 @@
 import Image from "next/image";
+import FrontSection from "./sections/FrontSection";
+import SponsorsSection from "./sections/SponsorsSection";
+import AboutSection from "./sections/AboutSection";
+import OutreachSection from "./sections/OutreachSection";
+import TeamSection from "./sections/TeamSection";
 
 const Index = () => {
   return (
-    <main className="font-display text-yellow text-9xl font-bold bg-black p-12">
-      ELECTRON VOLTS
-      <div className="text-yellow font-body text-lg font-normal">hi this is me</div>
+    <main className="font-display text-yellow bg-black">
+      <FrontSection />
+      <AboutSection />
+      <OutreachSection />
+      <TeamSection />
+      <SponsorsSection />
     </main>
   );
 };
